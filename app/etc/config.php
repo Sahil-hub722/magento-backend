@@ -352,6 +352,7 @@ return [
         'Hyva_Theme' => 1,
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeGraphQl' => 1,
-        'Temando_ShippingRemover' => 1
+        'Temando_ShippingRemover' => 1,
+        'Training_Example' => 1
     ]
 ];
