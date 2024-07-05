@@ -20,6 +20,7 @@ class Index extends Template
     }
     public function getSubTitle()
     {
+        // Main layout block development page
         return 'Learn Magento Development';
     }
 
