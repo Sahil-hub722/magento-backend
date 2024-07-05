@@ -21,6 +21,7 @@
                         <argument name="block_id" xsi:type="string">cms_block_example</argument>
                     </arguments>
                 </block>   
+                <!-- Creating a new cms block in frontend and adding it to cms block in backend -->
              
         </referenceContainer>
     </body>
