@@ -4,6 +4,7 @@
         <title>Layout Example</title>
     </head>
     <body>
+    <!-- this is a new layoutexample -->
         <!-- <referenceBlock name="page.main.title">
             <action method="setPageTitle">
                 <argument name="page_title" xsi:type="string">Something else</argument>
