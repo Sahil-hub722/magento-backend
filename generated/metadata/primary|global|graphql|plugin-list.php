@@ -445,39 +445,6 @@
         'instance' => 'Magento\\CmsUrlRewrite\\Plugin\\Cms\\Model\\PageRepository\\ValidationCompositePlugin',
       ),
     ),
-    'Magento\\ImportExport\\Model\\Import' => 
-    array (
-      'catalogProductFlatIndexerImport' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CatalogImportExport\\Model\\Indexer\\Product\\Flat\\Plugin\\Import',
-      ),
-      'invalidatePriceIndexerOnImport' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CatalogImportExport\\Model\\Indexer\\Product\\Price\\Plugin\\Import',
-      ),
-      'invalidateStockIndexerOnImport' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CatalogImportExport\\Model\\Indexer\\Stock\\Plugin\\Import',
-      ),
-      'invalidateEavIndexerOnImport' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CatalogImportExport\\Model\\Indexer\\Product\\Eav\\Plugin\\Import',
-      ),
-      'invalidateProductCategoryIndexerOnImport' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CatalogImportExport\\Model\\Indexer\\Product\\Category\\Plugin\\Import',
-      ),
-      'invalidateCategoryProductIndexerOnImport' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CatalogImportExport\\Model\\Indexer\\Category\\Product\\Plugin\\Import',
-      ),
-    ),
     'Magento\\Customer\\Model\\ResourceModel\\Visitor' => 
     array (
       'catalogLog' => 
@@ -717,6 +684,39 @@
         'instance' => 'Magento\\CatalogGraphQl\\Plugin\\AvailableProductsFilter',
       ),
     ),
+    'Magento\\ImportExport\\Model\\Import' => 
+    array (
+      'catalogProductFlatIndexerImport' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\CatalogImportExport\\Model\\Indexer\\Product\\Flat\\Plugin\\Import',
+      ),
+      'invalidatePriceIndexerOnImport' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\CatalogImportExport\\Model\\Indexer\\Product\\Price\\Plugin\\Import',
+      ),
+      'invalidateStockIndexerOnImport' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\CatalogImportExport\\Model\\Indexer\\Stock\\Plugin\\Import',
+      ),
+      'invalidateEavIndexerOnImport' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\CatalogImportExport\\Model\\Indexer\\Product\\Eav\\Plugin\\Import',
+      ),
+      'invalidateProductCategoryIndexerOnImport' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\CatalogImportExport\\Model\\Indexer\\Product\\Category\\Plugin\\Import',
+      ),
+      'invalidateCategoryProductIndexerOnImport' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\CatalogImportExport\\Model\\Indexer\\Category\\Product\\Plugin\\Import',
+      ),
+    ),
     'Magento\\Catalog\\Model\\Product\\Attribute\\Repository' => 
     array (
       'filterCustomAttribute' => 
@@ -750,15 +750,15 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\CatalogSearch\\Model\\Indexer\\Fulltext\\Plugin\\Product\\Action',
       ),
-      'update_url_rewrites_after_websites_update_plugin' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CatalogUrlRewrite\\Plugin\\Catalog\\Model\\Product\\UpdateProductWebsiteUrlRewrites',
-      ),
       'quoteProductMassChange' => 
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Quote\\Model\\Product\\Plugin\\MarkQuotesRecollectMassDisabled',
+      ),
+      'update_url_rewrites_after_websites_update_plugin' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\CatalogUrlRewrite\\Plugin\\Catalog\\Model\\Product\\UpdateProductWebsiteUrlRewrites',
       ),
     ),
     'Magento\\Catalog\\Controller\\Adminhtml\\Product\\Action\\Attribute\\Save' => 
@@ -897,30 +897,6 @@
         'instance' => 'Magento\\InventoryElasticsearch\\Plugin\\CatalogSearch\\Model\\Indexer\\Fulltext\\Action\\DataProvider\\StockedProductFilterByInventoryStock',
       ),
     ),
-    'Magento\\UrlRewrite\\Model\\StorageInterface' => 
-    array (
-      'storage_plugin' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CatalogUrlRewrite\\Model\\Category\\Plugin\\Storage',
-      ),
-    ),
-    'Magento\\CatalogUrlRewrite\\Model\\Storage\\DbStorage' => 
-    array (
-      'dynamic_storage_plugin' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CatalogUrlRewrite\\Plugin\\DynamicCategoryRewrites',
-      ),
-    ),
-    'Magento\\Framework\\View\\Asset\\MergeService' => 
-    array (
-      'cleanMergedJsCss' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\MediaStorage\\Model\\Asset\\Plugin\\CleanMergedJsCss',
-      ),
-    ),
     'Magento\\Quote\\Model\\QuoteRepository' => 
     array (
       'multishipping_quote_repository' => 
@@ -953,44 +929,75 @@
         'instance' => 'Magento\\Quote\\Model\\Product\\Plugin\\UpdateQuote',
       ),
     ),
-    'Magento\\MediaGallerySynchronizationApi\\Model\\ImportFilesComposite' => 
+    'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Price' => 
     array (
-      'createMediaGalleryThumbnails' => 
+      'bundle' => 
       array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\MediaGalleryUi\\Plugin\\CreateThumbnails',
+        'sortOrder' => 100,
+        'instance' => 'Magento\\Bundle\\Model\\Plugin\\PriceBackend',
+      ),
+      'configurable' => 
+      array (
+        'sortOrder' => 100,
+        'instance' => 'Magento\\ConfigurableProduct\\Model\\Plugin\\PriceBackend',
       ),
     ),
-    'Magento\\Cms\\Model\\ResourceModel\\Page' => 
+    'Magento\\Sales\\Model\\Order\\Item' => 
     array (
-      'cms_url_rewrite_plugin' => 
+      'bundle' => 
       array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CmsUrlRewrite\\Plugin\\Cms\\Model\\ResourceModel\\Page',
+        'sortOrder' => 100,
+        'instance' => 'Magento\\Bundle\\Model\\Sales\\Order\\Plugin\\Item',
       ),
     ),
-    'Magento\\Integration\\Api\\IntegrationServiceInterface' => 
+    'Magento\\Bundle\\Model\\Product\\Type' => 
     array (
-      'webapiIntegrationService' => 
+      'adapt_is_product_salable' => 
       array (
         'sortOrder' => 0,
-        'instance' => 'Magento\\Integration\\Model\\Plugin\\Integration',
+        'instance' => 'Magento\\InventoryBundleProduct\\Plugin\\Bundle\\Model\\Product\\Type\\AdaptIsSalablePlugin',
       ),
     ),
-    'Magento\\User\\Model\\User' => 
+    'Magento\\Quote\\Model\\QuoteManagement' => 
     array (
-      'revokeTokensFromInactiveAdmins' => 
+      'update_bundle_quote_item_options' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Magento\\Bundle\\Plugin\\Quote\\UpdateBundleQuoteItemOptions',
+      ),
+      'validate_purchase_order_number' => 
       array (
         'sortOrder' => 0,
-        'instance' => 'Magento\\Integration\\Plugin\\Model\\AdminUser',
+        'instance' => 'Magento\\OfflinePayments\\Plugin\\ValidatePurchaseOrderNumber',
+      ),
+      'coupon_uses_increment_plugin' => 
+      array (
+        'sortOrder' => 20,
+        'instance' => 'Magento\\SalesRule\\Plugin\\CouponUsagesIncrement',
       ),
     ),
-    'Magento\\Customer\\Model\\Customer' => 
+    'Magento\\UrlRewrite\\Model\\StorageInterface' => 
     array (
-      'revokeTokensFromInactiveCustomers' => 
+      'storage_plugin' => 
       array (
         'sortOrder' => 0,
-        'instance' => 'Magento\\Integration\\Plugin\\Model\\CustomerUser',
+        'instance' => 'Magento\\CatalogUrlRewrite\\Model\\Category\\Plugin\\Storage',
+      ),
+    ),
+    'Magento\\CatalogUrlRewrite\\Model\\Storage\\DbStorage' => 
+    array (
+      'dynamic_storage_plugin' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\CatalogUrlRewrite\\Plugin\\DynamicCategoryRewrites',
+      ),
+    ),
+    'Magento\\Framework\\View\\Asset\\MergeService' => 
+    array (
+      'cleanMergedJsCss' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\MediaStorage\\Model\\Asset\\Plugin\\CleanMergedJsCss',
       ),
     ),
     'Magento\\Payment\\Block\\Form\\Container' => 
@@ -1107,6 +1114,249 @@
         'instance' => 'Magento\\Sales\\Model\\Order\\Invoice\\Plugin\\AddressUpdate',
       ),
     ),
+    'Magento\\MediaGallerySynchronizationApi\\Model\\ImportFilesComposite' => 
+    array (
+      'createMediaGalleryThumbnails' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\MediaGalleryUi\\Plugin\\CreateThumbnails',
+      ),
+    ),
+    'Magento\\Catalog\\Model\\Product\\CartConfiguration' => 
+    array (
+      'Downloadable' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Downloadable\\Model\\Product\\CartConfiguration\\Plugin\\Downloadable',
+      ),
+      'configurable_product' => 
+      array (
+        'sortOrder' => 50,
+        'instance' => 'Magento\\ConfigurableProduct\\Model\\Product\\CartConfiguration\\Plugin\\Configurable',
+      ),
+      'isProductConfigured' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\GroupedProduct\\Model\\Product\\Cart\\Configuration\\Plugin\\Grouped',
+      ),
+    ),
+    'Magento\\Cms\\Model\\ResourceModel\\Page' => 
+    array (
+      'cms_url_rewrite_plugin' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\CmsUrlRewrite\\Plugin\\Cms\\Model\\ResourceModel\\Page',
+      ),
+    ),
+    'Magento\\Integration\\Api\\IntegrationServiceInterface' => 
+    array (
+      'webapiIntegrationService' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Integration\\Model\\Plugin\\Integration',
+      ),
+    ),
+    'Magento\\User\\Model\\User' => 
+    array (
+      'revokeTokensFromInactiveAdmins' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Integration\\Plugin\\Model\\AdminUser',
+      ),
+    ),
+    'Magento\\Customer\\Model\\Customer' => 
+    array (
+      'revokeTokensFromInactiveCustomers' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Integration\\Plugin\\Model\\CustomerUser',
+      ),
+    ),
+    'Magento\\CatalogInventory\\Model\\Quote\\Item\\QuantityValidator\\Initializer\\Option' => 
+    array (
+      'configurable_product' => 
+      array (
+        'sortOrder' => 50,
+        'instance' => 'Magento\\ConfigurableProduct\\Model\\Quote\\Item\\QuantityValidator\\Initializer\\Option\\Plugin\\ConfigurableProduct',
+      ),
+    ),
+    'Magento\\Sales\\Model\\Order\\Admin\\Item' => 
+    array (
+      'configurable_product' => 
+      array (
+        'sortOrder' => 50,
+        'instance' => 'Magento\\ConfigurableProduct\\Model\\Order\\Admin\\Item\\Plugin\\Configurable',
+      ),
+    ),
+    'Magento\\Catalog\\Helper\\Product\\Configuration' => 
+    array (
+      'configurable_product' => 
+      array (
+        'sortOrder' => 50,
+        'instance' => 'Magento\\ConfigurableProduct\\Helper\\Product\\Configuration\\Plugin',
+      ),
+      'grouped_options' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\GroupedProduct\\Helper\\Product\\Configuration\\Plugin\\Grouped',
+      ),
+    ),
+    'Magento\\Catalog\\Model\\Entity\\Product\\Attribute\\Group\\AttributeMapperInterface' => 
+    array (
+      'configurable_product' => 
+      array (
+        'sortOrder' => 50,
+        'instance' => 'Magento\\ConfigurableProduct\\Model\\Entity\\Product\\Attribute\\Group\\AttributeMapper\\Plugin',
+      ),
+    ),
+    'Magento\\Catalog\\Model\\Product\\Type' => 
+    array (
+      'configurable_output' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\ConfigurableProduct\\Model\\Product\\Type\\Plugin',
+      ),
+      'grouped_output' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\GroupedProduct\\Model\\Product\\Type\\Plugin',
+      ),
+    ),
+    'Magento\\ProductVideo\\Block\\Product\\View\\Gallery' => 
+    array (
+      'product_video_gallery' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\ConfigurableProduct\\Block\\Plugin\\Product\\Media\\Gallery',
+      ),
+    ),
+    'Magento\\ConfigurableProduct\\Model\\Product\\Type\\Configurable' => 
+    array (
+      'add_swatch_attributes_to_configurable' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Swatches\\Model\\Plugin\\Configurable',
+      ),
+      'used_products_cache_graphql' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\ConfigurableProduct\\Model\\Plugin\\Frontend\\UsedProductsCache',
+      ),
+    ),
+    'Magento\\Catalog\\Model\\Product\\Pricing\\Renderer\\SalableResolver' => 
+    array (
+      'configurable' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\ConfigurableProduct\\Plugin\\Catalog\\Model\\Product\\Pricing\\Renderer\\SalableResolver',
+      ),
+    ),
+    'Magento\\SalesRule\\Model\\Rule\\Condition\\Product' => 
+    array (
+      'apply_rule_on_configurable_children' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\ConfigurableProduct\\Plugin\\SalesRule\\Model\\Rule\\Condition\\Product',
+      ),
+    ),
+    'Magento\\Tax\\Model\\Sales\\Total\\Quote\\CommonTaxCollector' => 
+    array (
+      'apply_tax_class_id' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\ConfigurableProduct\\Plugin\\Tax\\Model\\Sales\\Total\\Quote\\CommonTaxCollector',
+      ),
+    ),
+    'Magento\\CatalogInventory\\Model\\ResourceModel\\Stock\\Item' => 
+    array (
+      'updateStockChangedAuto' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\ConfigurableProduct\\Model\\Plugin\\UpdateStockChangedAuto',
+      ),
+      'update_source_item_at_legacy_stock_item_save' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\InventoryCatalog\\Plugin\\CatalogInventory\\UpdateSourceItemAtLegacyStockItemSavePlugin',
+      ),
+      'after_update_stock_item_for_new_configurable_product' => 
+      array (
+        'sortOrder' => 100,
+        'instance' => 'Magento\\InventoryConfigurableProduct\\Plugin\\CatalogInventory\\UpdateLegacyStockItemForNewConfigurableProduct',
+      ),
+      'update_source_stock_for_configurable_product' => 
+      array (
+        'sortOrder' => 200,
+        'instance' => 'Magento\\InventoryConfigurableProduct\\Plugin\\CatalogInventory\\UpdateLegacyStockStatusForConfigurableProduct',
+      ),
+    ),
+    'Magento\\Quote\\Model\\Quote\\Address\\ToOrder' => 
+    array (
+      'add_tax_to_order' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Tax\\Model\\Quote\\ToOrderConverter',
+      ),
+      'set_pickup_location_to_order_during_address_conversion' => 
+      array (
+        'sortOrder' => 20,
+        'instance' => 'Magento\\InventoryInStorePickupQuote\\Plugin\\Quote\\SetPickupLocationToOrder',
+      ),
+    ),
+    'Magento\\Quote\\Model\\Cart\\TotalsConverter' => 
+    array (
+      'add_tax_details' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Tax\\Model\\Quote\\GrandTotalDetailsPlugin',
+      ),
+    ),
+    'Magento\\Sales\\Api\\OrderRepositoryInterface' => 
+    array (
+      'save_order_tax' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Tax\\Model\\Plugin\\OrderSave',
+      ),
+      'save_gift_message' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\GiftMessage\\Model\\Plugin\\OrderSave',
+      ),
+      'get_gift_message' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\GiftMessage\\Model\\Plugin\\OrderGet',
+      ),
+      'get_pickup_location_for_order' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\InventoryInStorePickupSales\\Plugin\\Sales\\Order\\GetPickupLocationForOrderPlugin',
+      ),
+      'save_pickup_location_for_order' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\InventoryInStorePickupSales\\Plugin\\Sales\\Order\\SavePickupLocationForOrderPlugin',
+      ),
+    ),
+    'Magento\\Catalog\\Ui\\DataProvider\\Product\\Listing\\DataProvider' => 
+    array (
+      'taxSettingsProvider' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Tax\\Plugin\\Ui\\DataProvider\\TaxSettings',
+      ),
+      'weeeSettingsProvider' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Weee\\Plugin\\Ui\\DataProvider\\WeeeSettings',
+      ),
+      'wishlistSettingsDataProvider' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Wishlist\\Plugin\\Ui\\DataProvider\\WishlistSettings',
+      ),
+    ),
     'Magento\\Config\\Model\\Config\\Structure\\Converter' => 
     array (
       'cron_backend_config_structure_converter_plugin' => 
@@ -1145,24 +1395,6 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Analytics\\Plugin\\BearerTokenValidatorPlugin',
-      ),
-    ),
-    'Magento\\Catalog\\Model\\Product\\CartConfiguration' => 
-    array (
-      'Downloadable' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Downloadable\\Model\\Product\\CartConfiguration\\Plugin\\Downloadable',
-      ),
-      'isProductConfigured' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\GroupedProduct\\Model\\Product\\Cart\\Configuration\\Plugin\\Grouped',
-      ),
-      'configurable_product' => 
-      array (
-        'sortOrder' => 50,
-        'instance' => 'Magento\\ConfigurableProduct\\Model\\Product\\CartConfiguration\\Plugin\\Configurable',
       ),
     ),
     'Magento\\Framework\\App\\FrontControllerInterface' => 
@@ -1206,51 +1438,36 @@
         'instance' => 'Magento\\OfflineShipping\\Model\\Plugin\\Checkout\\Block\\Cart\\Shipping',
       ),
     ),
-    'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Price' => 
+    'Magento\\Catalog\\Model\\Product\\Initialization\\Helper\\ProductLinks' => 
     array (
-      'bundle' => 
-      array (
-        'sortOrder' => 100,
-        'instance' => 'Magento\\Bundle\\Model\\Plugin\\PriceBackend',
-      ),
-      'configurable' => 
-      array (
-        'sortOrder' => 100,
-        'instance' => 'Magento\\ConfigurableProduct\\Model\\Plugin\\PriceBackend',
-      ),
-    ),
-    'Magento\\Sales\\Model\\Order\\Item' => 
-    array (
-      'bundle' => 
-      array (
-        'sortOrder' => 100,
-        'instance' => 'Magento\\Bundle\\Model\\Sales\\Order\\Plugin\\Item',
-      ),
-    ),
-    'Magento\\Bundle\\Model\\Product\\Type' => 
-    array (
-      'adapt_is_product_salable' => 
+      'GroupedProduct' => 
       array (
         'sortOrder' => 0,
-        'instance' => 'Magento\\InventoryBundleProduct\\Plugin\\Bundle\\Model\\Product\\Type\\AdaptIsSalablePlugin',
+        'instance' => 'Magento\\GroupedProduct\\Model\\Product\\Initialization\\Helper\\ProductLinks\\Plugin\\Grouped',
       ),
     ),
-    'Magento\\Quote\\Model\\QuoteManagement' => 
+    'Magento\\Catalog\\Model\\ResourceModel\\Product\\Link' => 
     array (
-      'update_bundle_quote_item_options' => 
-      array (
-        'sortOrder' => 10,
-        'instance' => 'Magento\\Bundle\\Plugin\\Quote\\UpdateBundleQuoteItemOptions',
-      ),
-      'validate_purchase_order_number' => 
+      'groupedProductLinkProcessor' => 
       array (
         'sortOrder' => 0,
-        'instance' => 'Magento\\OfflinePayments\\Plugin\\ValidatePurchaseOrderNumber',
+        'instance' => 'Magento\\GroupedProduct\\Model\\ResourceModel\\Product\\Link\\RelationPersister',
       ),
-      'coupon_uses_increment_plugin' => 
+    ),
+    'Magento\\Catalog\\Model\\ResourceModel\\Attribute\\RemoveProductAttributeData' => 
+    array (
+      'removeWeeAttributesData' => 
       array (
-        'sortOrder' => 20,
-        'instance' => 'Magento\\SalesRule\\Plugin\\CouponUsagesIncrement',
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Weee\\Plugin\\Catalog\\ResourceModel\\Attribute\\RemoveProductWeeData',
+      ),
+    ),
+    'Magento\\Catalog\\Ui\\Component\\Listing\\Columns' => 
+    array (
+      'changeWeeColumnConfig' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Weee\\Plugin\\Catalog\\Ui\\Component\\Listing\\Columns',
       ),
     ),
     'Magento\\Catalog\\Model\\Indexer\\Category\\Product\\Action\\Rows' => 
@@ -1305,6 +1522,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Email\\Model\\Mail\\TransportInterfacePlugin',
       ),
+      'customer-sample-data-disable-registration-email-send' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\CustomerSampleData\\Magento\\Framework\\Mail\\Transport\\MailPlugin',
+      ),
     ),
     'Magento\\Email\\Model\\AbstractTemplate' => 
     array (
@@ -1335,34 +1557,6 @@
         'instance' => 'Magento\\Fedex\\Plugin\\Block\\Tracking\\PopupDeliveryDate',
       ),
     ),
-    'Magento\\Sales\\Api\\OrderRepositoryInterface' => 
-    array (
-      'save_gift_message' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\GiftMessage\\Model\\Plugin\\OrderSave',
-      ),
-      'get_gift_message' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\GiftMessage\\Model\\Plugin\\OrderGet',
-      ),
-      'get_pickup_location_for_order' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\InventoryInStorePickupSales\\Plugin\\Sales\\Order\\GetPickupLocationForOrderPlugin',
-      ),
-      'save_pickup_location_for_order' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\InventoryInStorePickupSales\\Plugin\\Sales\\Order\\SavePickupLocationForOrderPlugin',
-      ),
-      'save_order_tax' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Tax\\Model\\Plugin\\OrderSave',
-      ),
-    ),
     'Magento\\Framework\\App\\PageCache\\Identifier' => 
     array (
       'core-app-area-design-exception-plugin' => 
@@ -1379,48 +1573,6 @@
         'instance' => 'Magento\\PageCache\\Model\\App\\PageCachePlugin',
       ),
     ),
-    'Magento\\Catalog\\Model\\Product\\Type' => 
-    array (
-      'grouped_output' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\GroupedProduct\\Model\\Product\\Type\\Plugin',
-      ),
-      'configurable_output' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\ConfigurableProduct\\Model\\Product\\Type\\Plugin',
-      ),
-    ),
-    'Magento\\Catalog\\Helper\\Product\\Configuration' => 
-    array (
-      'grouped_options' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\GroupedProduct\\Helper\\Product\\Configuration\\Plugin\\Grouped',
-      ),
-      'configurable_product' => 
-      array (
-        'sortOrder' => 50,
-        'instance' => 'Magento\\ConfigurableProduct\\Helper\\Product\\Configuration\\Plugin',
-      ),
-    ),
-    'Magento\\Catalog\\Model\\Product\\Initialization\\Helper\\ProductLinks' => 
-    array (
-      'GroupedProduct' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\GroupedProduct\\Model\\Product\\Initialization\\Helper\\ProductLinks\\Plugin\\Grouped',
-      ),
-    ),
-    'Magento\\Catalog\\Model\\ResourceModel\\Product\\Link' => 
-    array (
-      'groupedProductLinkProcessor' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\GroupedProduct\\Model\\ResourceModel\\Product\\Link\\RelationPersister',
-      ),
-    ),
     'Magento\\GroupedProduct\\Model\\Product\\Type\\Grouped' => 
     array (
       'outOfStockFilter' => 
@@ -1434,25 +1586,17 @@
         'instance' => '\\Magento\\MsrpGroupedProduct\\Plugin\\Model\\Product\\Type\\Grouped',
       ),
     ),
-    'Magento\\Customer\\Controller\\Ajax\\Login' => 
+    'Magento\\ConfigurableProduct\\Model\\ResourceModel\\Product\\Type\\Configurable\\Product\\Collection' => 
     array (
-      'captcha_validation' => 
-      array (
-        'sortOrder' => 50,
-        'instance' => 'Magento\\Captcha\\Model\\Customer\\Plugin\\AjaxLogin',
-      ),
-    ),
-    'Magento\\Checkout\\Block\\Cart\\Sidebar' => 
-    array (
-      'login_captcha' => 
-      array (
-        'sortOrder' => 50,
-        'instance' => 'Magento\\Captcha\\Model\\Cart\\ConfigPlugin',
-      ),
-      'addAgreementsToMinicartConfig' => 
+      'catalogRulePriceForConfigurableProduct' => 
       array (
         'sortOrder' => 0,
-        'instance' => 'PayPal\\Braintree\\Plugin\\AddAgreementsToMinicartConfig',
+        'instance' => 'Magento\\CatalogRuleConfigurable\\Plugin\\ConfigurableProduct\\Model\\ResourceModel\\AddCatalogRulePrice',
+      ),
+      'add_stock_information' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\ConfigurableProductGraphQl\\Plugin\\AddStockStatusToCollection',
       ),
     ),
     'Magento\\Inventory\\Model\\ResourceModel\\IsProductAssignedToStock' => 
@@ -1725,29 +1869,6 @@
         'instance' => 'Magento\\InventoryCatalog\\Plugin\\CatalogInventory\\UpdateSourceItemAtLegacyQtyCounterPlugin',
       ),
     ),
-    'Magento\\CatalogInventory\\Model\\ResourceModel\\Stock\\Item' => 
-    array (
-      'update_source_item_at_legacy_stock_item_save' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\InventoryCatalog\\Plugin\\CatalogInventory\\UpdateSourceItemAtLegacyStockItemSavePlugin',
-      ),
-      'updateStockChangedAuto' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\ConfigurableProduct\\Model\\Plugin\\UpdateStockChangedAuto',
-      ),
-      'after_update_stock_item_for_new_configurable_product' => 
-      array (
-        'sortOrder' => 100,
-        'instance' => 'Magento\\InventoryConfigurableProduct\\Plugin\\CatalogInventory\\UpdateLegacyStockItemForNewConfigurableProduct',
-      ),
-      'update_source_stock_for_configurable_product' => 
-      array (
-        'sortOrder' => 200,
-        'instance' => 'Magento\\InventoryConfigurableProduct\\Plugin\\CatalogInventory\\UpdateLegacyStockStatusForConfigurableProduct',
-      ),
-    ),
     'Magento\\CatalogInventory\\Model\\ResourceModel\\Stock\\Status' => 
     array (
       'adapt_add_stock_data_to_collection' => 
@@ -1965,75 +2086,6 @@
         'instance' => 'Magento\\InventoryCatalogSearch\\Plugin\\CatalogSearch\\Model\\Indexer\\ChildProductFilterByInventoryStockPlugin',
       ),
     ),
-    'Magento\\CatalogInventory\\Model\\Quote\\Item\\QuantityValidator\\Initializer\\Option' => 
-    array (
-      'configurable_product' => 
-      array (
-        'sortOrder' => 50,
-        'instance' => 'Magento\\ConfigurableProduct\\Model\\Quote\\Item\\QuantityValidator\\Initializer\\Option\\Plugin\\ConfigurableProduct',
-      ),
-    ),
-    'Magento\\Sales\\Model\\Order\\Admin\\Item' => 
-    array (
-      'configurable_product' => 
-      array (
-        'sortOrder' => 50,
-        'instance' => 'Magento\\ConfigurableProduct\\Model\\Order\\Admin\\Item\\Plugin\\Configurable',
-      ),
-    ),
-    'Magento\\Catalog\\Model\\Entity\\Product\\Attribute\\Group\\AttributeMapperInterface' => 
-    array (
-      'configurable_product' => 
-      array (
-        'sortOrder' => 50,
-        'instance' => 'Magento\\ConfigurableProduct\\Model\\Entity\\Product\\Attribute\\Group\\AttributeMapper\\Plugin',
-      ),
-    ),
-    'Magento\\ProductVideo\\Block\\Product\\View\\Gallery' => 
-    array (
-      'product_video_gallery' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\ConfigurableProduct\\Block\\Plugin\\Product\\Media\\Gallery',
-      ),
-    ),
-    'Magento\\ConfigurableProduct\\Model\\Product\\Type\\Configurable' => 
-    array (
-      'add_swatch_attributes_to_configurable' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Swatches\\Model\\Plugin\\Configurable',
-      ),
-      'used_products_cache_graphql' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\ConfigurableProduct\\Model\\Plugin\\Frontend\\UsedProductsCache',
-      ),
-    ),
-    'Magento\\Catalog\\Model\\Product\\Pricing\\Renderer\\SalableResolver' => 
-    array (
-      'configurable' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\ConfigurableProduct\\Plugin\\Catalog\\Model\\Product\\Pricing\\Renderer\\SalableResolver',
-      ),
-    ),
-    'Magento\\SalesRule\\Model\\Rule\\Condition\\Product' => 
-    array (
-      'apply_rule_on_configurable_children' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\ConfigurableProduct\\Plugin\\SalesRule\\Model\\Rule\\Condition\\Product',
-      ),
-    ),
-    'Magento\\Tax\\Model\\Sales\\Total\\Quote\\CommonTaxCollector' => 
-    array (
-      'apply_tax_class_id' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\ConfigurableProduct\\Plugin\\Tax\\Model\\Sales\\Total\\Quote\\CommonTaxCollector',
-      ),
-    ),
     'Magento\\InventorySalesApi\\Model\\GetSkuFromOrderItemInterface' => 
     array (
       'get_configurable_option_sku_from_order' => 
@@ -2140,19 +2192,6 @@
       array (
         'sortOrder' => 20,
         'instance' => 'Magento\\InventoryInStorePickupQuote\\Plugin\\Quote\\DoNotUseBillingAddressForShipping',
-      ),
-    ),
-    'Magento\\Quote\\Model\\Quote\\Address\\ToOrder' => 
-    array (
-      'set_pickup_location_to_order_during_address_conversion' => 
-      array (
-        'sortOrder' => 20,
-        'instance' => 'Magento\\InventoryInStorePickupQuote\\Plugin\\Quote\\SetPickupLocationToOrder',
-      ),
-      'add_tax_to_order' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Tax\\Model\\Quote\\ToOrderConverter',
       ),
     ),
     'Magento\\Quote\\Model\\Quote\\TotalsCollector' => 
@@ -2474,6 +2513,14 @@
         'instance' => 'Magento\\PageBuilder\\Plugin\\Catalog\\Block\\Product\\ProductsListPlugin',
       ),
     ),
+    'Magento\\Framework\\View\\Page\\Config' => 
+    array (
+      'headIncludes' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\ThemeSampleData\\Plugin\\View\\Page\\Config',
+      ),
+    ),
     'Magento\\Sales\\Api\\Data\\OrderPaymentInterface' => 
     array (
       'PaymentVaultExtensionAttributeOperations' => 
@@ -2493,6 +2540,27 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\CheckoutAgreements\\Model\\Checkout\\Plugin\\Validation',
+      ),
+    ),
+    'Magento\\Customer\\Controller\\Ajax\\Login' => 
+    array (
+      'captcha_validation' => 
+      array (
+        'sortOrder' => 50,
+        'instance' => 'Magento\\Captcha\\Model\\Customer\\Plugin\\AjaxLogin',
+      ),
+    ),
+    'Magento\\Checkout\\Block\\Cart\\Sidebar' => 
+    array (
+      'login_captcha' => 
+      array (
+        'sortOrder' => 50,
+        'instance' => 'Magento\\Captcha\\Model\\Cart\\ConfigPlugin',
+      ),
+      'addAgreementsToMinicartConfig' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'PayPal\\Braintree\\Plugin\\AddAgreementsToMinicartConfig',
       ),
     ),
     'Magento\\Payment\\Model\\Checks\\Composite' => 
@@ -2578,14 +2646,6 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\ProductVideo\\Model\\Plugin\\ExternalVideoResourceBackend',
-      ),
-    ),
-    'Magento\\Checkout\\Api\\GuestPaymentInformationManagementInterface' => 
-    array (
-      'validate-guest-agreements' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CheckoutAgreements\\Model\\Checkout\\Plugin\\GuestValidation',
       ),
     ),
     'Magento\\Framework\\GraphQl\\Query\\ResolverInterface' => 
@@ -2678,19 +2738,6 @@
         'instance' => 'Magento\\RemoteStorage\\Plugin\\Zip',
       ),
     ),
-    'Magento\\ConfigurableProduct\\Model\\ResourceModel\\Product\\Type\\Configurable\\Product\\Collection' => 
-    array (
-      'catalogRulePriceForConfigurableProduct' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CatalogRuleConfigurable\\Plugin\\ConfigurableProduct\\Model\\ResourceModel\\AddCatalogRulePrice',
-      ),
-      'add_stock_information' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\ConfigurableProductGraphQl\\Plugin\\AddStockStatusToCollection',
-      ),
-    ),
     'Magento\\Sales\\Model\\Order\\CreditmemoDocumentFactory' => 
     array (
       'sales_inventory_creditmemo_item_set_back_to_stock' => 
@@ -2713,6 +2760,14 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\SalesInventory\\Model\\Plugin\\Order\\Validation\\InvoiceRefundCreationArguments',
+      ),
+    ),
+    'Magento\\Checkout\\Api\\GuestPaymentInformationManagementInterface' => 
+    array (
+      'validate-guest-agreements' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\CheckoutAgreements\\Model\\Checkout\\Plugin\\GuestValidation',
       ),
     ),
     'Magento\\Catalog\\Model\\ResourceModel\\Eav\\Attribute' => 
@@ -2745,32 +2800,6 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Swatches\\Plugin\\Eav\\Model\\Entity\\Attribute\\OptionManagement',
-      ),
-    ),
-    'Magento\\Quote\\Model\\Cart\\TotalsConverter' => 
-    array (
-      'add_tax_details' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Tax\\Model\\Quote\\GrandTotalDetailsPlugin',
-      ),
-    ),
-    'Magento\\Catalog\\Ui\\DataProvider\\Product\\Listing\\DataProvider' => 
-    array (
-      'taxSettingsProvider' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Tax\\Plugin\\Ui\\DataProvider\\TaxSettings',
-      ),
-      'weeeSettingsProvider' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Weee\\Plugin\\Ui\\DataProvider\\WeeeSettings',
-      ),
-      'wishlistSettingsDataProvider' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Wishlist\\Plugin\\Ui\\DataProvider\\WishlistSettings',
       ),
     ),
     'Magento\\Webapi\\Model\\ServiceMetadata' => 
@@ -2811,22 +2840,6 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\WebapiSecurity\\Model\\Plugin\\AnonymousResourceSecurity',
-      ),
-    ),
-    'Magento\\Catalog\\Model\\ResourceModel\\Attribute\\RemoveProductAttributeData' => 
-    array (
-      'removeWeeAttributesData' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Weee\\Plugin\\Catalog\\ResourceModel\\Attribute\\RemoveProductWeeData',
-      ),
-    ),
-    'Magento\\Catalog\\Ui\\Component\\Listing\\Columns' => 
-    array (
-      'changeWeeColumnConfig' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Weee\\Plugin\\Catalog\\Ui\\Component\\Listing\\Columns',
       ),
     ),
     'Magento\\Wishlist\\Controller\\AbstractIndex' => 
@@ -2981,6 +2994,22 @@
         'instance' => 'Magento\\GraphQlCache\\Model\\Plugin\\Auth\\TokenRevoker',
       ),
     ),
+    'Magento\\ReCaptchaValidationApi\\Api\\ValidatorInterface' => 
+    array (
+      'graphql_recaptcha_validation_override' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\ReCaptchaWebapiGraphQl\\Plugin\\ValidationOverrider',
+      ),
+    ),
+    'Magento\\CatalogGraphQl\\Model\\Resolver\\Layer\\DataProvider\\Filters' => 
+    array (
+      'add_swatch_data_to_filters' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\SwatchesGraphQl\\Plugin\\Filters\\DataProviderPlugin',
+      ),
+    ),
     'Magento\\QuoteGraphQl\\Model\\Resolver\\SetPaymentMethodOnCart' => 
     array (
       'paypal_express_payment_method' => 
@@ -3018,22 +3047,6 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\PaypalGraphQl\\Model\\Plugin\\Payflowlink',
-      ),
-    ),
-    'Magento\\ReCaptchaValidationApi\\Api\\ValidatorInterface' => 
-    array (
-      'graphql_recaptcha_validation_override' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\ReCaptchaWebapiGraphQl\\Plugin\\ValidationOverrider',
-      ),
-    ),
-    'Magento\\CatalogGraphQl\\Model\\Resolver\\Layer\\DataProvider\\Filters' => 
-    array (
-      'add_swatch_data_to_filters' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\SwatchesGraphQl\\Plugin\\Filters\\DataProviderPlugin',
       ),
     ),
   ),
@@ -3707,40 +3720,6 @@
         'instance' => 'Magento\\CmsUrlRewrite\\Plugin\\Cms\\Model\\PageRepository\\ValidationCompositePlugin',
       ),
     ),
-    'Magento\\ImportExport\\Model\\AbstractModel' => NULL,
-    'Magento\\ImportExport\\Model\\Import' => 
-    array (
-      'catalogProductFlatIndexerImport' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CatalogImportExport\\Model\\Indexer\\Product\\Flat\\Plugin\\Import',
-      ),
-      'invalidatePriceIndexerOnImport' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CatalogImportExport\\Model\\Indexer\\Product\\Price\\Plugin\\Import',
-      ),
-      'invalidateStockIndexerOnImport' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CatalogImportExport\\Model\\Indexer\\Stock\\Plugin\\Import',
-      ),
-      'invalidateEavIndexerOnImport' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CatalogImportExport\\Model\\Indexer\\Product\\Eav\\Plugin\\Import',
-      ),
-      'invalidateProductCategoryIndexerOnImport' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CatalogImportExport\\Model\\Indexer\\Product\\Category\\Plugin\\Import',
-      ),
-      'invalidateCategoryProductIndexerOnImport' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CatalogImportExport\\Model\\Indexer\\Category\\Product\\Plugin\\Import',
-      ),
-    ),
     'Magento\\Customer\\Model\\ResourceModel\\Visitor' => 
     array (
       'catalogLog' => 
@@ -4035,6 +4014,40 @@
         'instance' => 'Magento\\ConfigurableProduct\\Model\\Plugin\\ProductRepositorySave',
       ),
     ),
+    'Magento\\ImportExport\\Model\\AbstractModel' => NULL,
+    'Magento\\ImportExport\\Model\\Import' => 
+    array (
+      'catalogProductFlatIndexerImport' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\CatalogImportExport\\Model\\Indexer\\Product\\Flat\\Plugin\\Import',
+      ),
+      'invalidatePriceIndexerOnImport' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\CatalogImportExport\\Model\\Indexer\\Product\\Price\\Plugin\\Import',
+      ),
+      'invalidateStockIndexerOnImport' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\CatalogImportExport\\Model\\Indexer\\Stock\\Plugin\\Import',
+      ),
+      'invalidateEavIndexerOnImport' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\CatalogImportExport\\Model\\Indexer\\Product\\Eav\\Plugin\\Import',
+      ),
+      'invalidateProductCategoryIndexerOnImport' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\CatalogImportExport\\Model\\Indexer\\Product\\Category\\Plugin\\Import',
+      ),
+      'invalidateCategoryProductIndexerOnImport' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\CatalogImportExport\\Model\\Indexer\\Category\\Product\\Plugin\\Import',
+      ),
+    ),
     'Magento\\Catalog\\Api\\ProductAttributeRepositoryInterface' => NULL,
     'Magento\\Framework\\Api\\MetadataServiceInterface' => NULL,
     'Magento\\Catalog\\Model\\Product\\Attribute\\Repository' => 
@@ -4083,15 +4096,15 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\CatalogSearch\\Model\\Indexer\\Fulltext\\Plugin\\Product\\Action',
       ),
-      'update_url_rewrites_after_websites_update_plugin' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CatalogUrlRewrite\\Plugin\\Catalog\\Model\\Product\\UpdateProductWebsiteUrlRewrites',
-      ),
       'quoteProductMassChange' => 
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Quote\\Model\\Product\\Plugin\\MarkQuotesRecollectMassDisabled',
+      ),
+      'update_url_rewrites_after_websites_update_plugin' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\CatalogUrlRewrite\\Plugin\\Catalog\\Model\\Product\\UpdateProductWebsiteUrlRewrites',
       ),
     ),
     'Magento\\Backend\\App\\Action' => 
@@ -4307,53 +4320,6 @@
         'instance' => 'Magento\\InventoryElasticsearch\\Plugin\\CatalogSearch\\Model\\Indexer\\Fulltext\\Action\\DataProvider\\StockedProductFilterByInventoryStock',
       ),
     ),
-    'Magento\\UrlRewrite\\Model\\StorageInterface' => 
-    array (
-      'storage_plugin' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CatalogUrlRewrite\\Model\\Category\\Plugin\\Storage',
-      ),
-    ),
-    'Magento\\UrlRewrite\\Model\\UrlPersistInterface' => NULL,
-    'Magento\\UrlRewrite\\Model\\UrlFinderInterface' => NULL,
-    'Magento\\UrlRewrite\\Model\\Storage\\AbstractStorage' => 
-    array (
-      'storage_plugin' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CatalogUrlRewrite\\Model\\Category\\Plugin\\Storage',
-      ),
-    ),
-    'Magento\\UrlRewrite\\Model\\Storage\\DbStorage' => 
-    array (
-      'storage_plugin' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CatalogUrlRewrite\\Model\\Category\\Plugin\\Storage',
-      ),
-    ),
-    'Magento\\CatalogUrlRewrite\\Model\\Storage\\DbStorage' => 
-    array (
-      'storage_plugin' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CatalogUrlRewrite\\Model\\Category\\Plugin\\Storage',
-      ),
-      'dynamic_storage_plugin' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CatalogUrlRewrite\\Plugin\\DynamicCategoryRewrites',
-      ),
-    ),
-    'Magento\\Framework\\View\\Asset\\MergeService' => 
-    array (
-      'cleanMergedJsCss' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\MediaStorage\\Model\\Asset\\Plugin\\CleanMergedJsCss',
-      ),
-    ),
     'Magento\\Quote\\Api\\CartRepositoryInterface' => 
     array (
       'remove_in_store_pickup_data' => 
@@ -4403,47 +4369,124 @@
         'instance' => 'Magento\\Quote\\Model\\Product\\Plugin\\UpdateQuote',
       ),
     ),
-    'Magento\\MediaGallerySynchronizationApi\\Model\\ImportFilesInterface' => NULL,
-    'Magento\\MediaGallerySynchronizationApi\\Model\\ImportFilesComposite' => 
+    'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Price' => 
     array (
-      'createMediaGalleryThumbnails' => 
+      'attributeValidation' => 
       array (
         'sortOrder' => 0,
-        'instance' => 'Magento\\MediaGalleryUi\\Plugin\\CreateThumbnails',
+        'instance' => 'Magento\\Catalog\\Plugin\\Model\\Attribute\\Backend\\AttributeValidation',
+      ),
+      'ConfigurableProduct::skipValidation' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\ConfigurableProduct\\Plugin\\Model\\Attribute\\Backend\\AttributeValidation',
+      ),
+      'bundle' => 
+      array (
+        'sortOrder' => 100,
+        'instance' => 'Magento\\Bundle\\Model\\Plugin\\PriceBackend',
+      ),
+      'configurable' => 
+      array (
+        'sortOrder' => 100,
+        'instance' => 'Magento\\ConfigurableProduct\\Model\\Plugin\\PriceBackend',
       ),
     ),
-    'Magento\\Cms\\Model\\ResourceModel\\Page' => 
+    'Magento\\Sales\\Model\\AbstractModel' => NULL,
+    'Magento\\Sales\\Api\\Data\\OrderItemInterface' => NULL,
+    'Magento\\Sales\\Model\\Order\\Item' => 
     array (
-      'cms_url_rewrite_plugin' => 
+      'bundle' => 
       array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CmsUrlRewrite\\Plugin\\Cms\\Model\\ResourceModel\\Page',
+        'sortOrder' => 100,
+        'instance' => 'Magento\\Bundle\\Model\\Sales\\Order\\Plugin\\Item',
       ),
     ),
-    'Magento\\Integration\\Api\\IntegrationServiceInterface' => 
+    'Magento\\Catalog\\Model\\Product\\Type\\AbstractType' => NULL,
+    'Magento\\Bundle\\Model\\Product\\Type' => 
     array (
-      'webapiIntegrationService' => 
+      'adapt_is_product_salable' => 
       array (
         'sortOrder' => 0,
-        'instance' => 'Magento\\Integration\\Model\\Plugin\\Integration',
+        'instance' => 'Magento\\InventoryBundleProduct\\Plugin\\Bundle\\Model\\Product\\Type\\AdaptIsSalablePlugin',
       ),
     ),
-    'Magento\\Backend\\Model\\Auth\\Credential\\StorageInterface' => NULL,
-    'Magento\\User\\Api\\Data\\UserInterface' => NULL,
-    'Magento\\User\\Model\\User' => 
+    'Magento\\Quote\\Api\\CartManagementInterface' => 
     array (
-      'revokeTokensFromInactiveAdmins' => 
+      'order_cancellation' => 
       array (
         'sortOrder' => 0,
-        'instance' => 'Magento\\Integration\\Plugin\\Model\\AdminUser',
+        'instance' => 'PayPal\\Braintree\\Plugin\\OrderCancellation',
       ),
     ),
-    'Magento\\Customer\\Model\\Customer' => 
+    'Magento\\Quote\\Model\\QuoteManagement' => 
     array (
-      'revokeTokensFromInactiveCustomers' => 
+      'order_cancellation' => 
       array (
         'sortOrder' => 0,
-        'instance' => 'Magento\\Integration\\Plugin\\Model\\CustomerUser',
+        'instance' => 'PayPal\\Braintree\\Plugin\\OrderCancellation',
+      ),
+      'validate_purchase_order_number' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\OfflinePayments\\Plugin\\ValidatePurchaseOrderNumber',
+      ),
+      'update_bundle_quote_item_options' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Magento\\Bundle\\Plugin\\Quote\\UpdateBundleQuoteItemOptions',
+      ),
+      'coupon_uses_increment_plugin' => 
+      array (
+        'sortOrder' => 20,
+        'instance' => 'Magento\\SalesRule\\Plugin\\CouponUsagesIncrement',
+      ),
+    ),
+    'Magento\\UrlRewrite\\Model\\StorageInterface' => 
+    array (
+      'storage_plugin' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\CatalogUrlRewrite\\Model\\Category\\Plugin\\Storage',
+      ),
+    ),
+    'Magento\\UrlRewrite\\Model\\UrlPersistInterface' => NULL,
+    'Magento\\UrlRewrite\\Model\\UrlFinderInterface' => NULL,
+    'Magento\\UrlRewrite\\Model\\Storage\\AbstractStorage' => 
+    array (
+      'storage_plugin' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\CatalogUrlRewrite\\Model\\Category\\Plugin\\Storage',
+      ),
+    ),
+    'Magento\\UrlRewrite\\Model\\Storage\\DbStorage' => 
+    array (
+      'storage_plugin' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\CatalogUrlRewrite\\Model\\Category\\Plugin\\Storage',
+      ),
+    ),
+    'Magento\\CatalogUrlRewrite\\Model\\Storage\\DbStorage' => 
+    array (
+      'storage_plugin' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\CatalogUrlRewrite\\Model\\Category\\Plugin\\Storage',
+      ),
+      'dynamic_storage_plugin' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\CatalogUrlRewrite\\Plugin\\DynamicCategoryRewrites',
+      ),
+    ),
+    'Magento\\Framework\\View\\Asset\\MergeService' => 
+    array (
+      'cleanMergedJsCss' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\MediaStorage\\Model\\Asset\\Plugin\\CleanMergedJsCss',
       ),
     ),
     'Magento\\Payment\\Block\\Form\\Container' => 
@@ -4875,6 +4918,283 @@
         'instance' => 'Magento\\Sales\\Model\\Order\\Invoice\\Plugin\\AddressUpdate',
       ),
     ),
+    'Magento\\MediaGallerySynchronizationApi\\Model\\ImportFilesInterface' => NULL,
+    'Magento\\MediaGallerySynchronizationApi\\Model\\ImportFilesComposite' => 
+    array (
+      'createMediaGalleryThumbnails' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\MediaGalleryUi\\Plugin\\CreateThumbnails',
+      ),
+    ),
+    'Magento\\Catalog\\Model\\Product\\CartConfiguration' => 
+    array (
+      'Downloadable' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Downloadable\\Model\\Product\\CartConfiguration\\Plugin\\Downloadable',
+      ),
+      'isProductConfigured' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\GroupedProduct\\Model\\Product\\Cart\\Configuration\\Plugin\\Grouped',
+      ),
+      'configurable_product' => 
+      array (
+        'sortOrder' => 50,
+        'instance' => 'Magento\\ConfigurableProduct\\Model\\Product\\CartConfiguration\\Plugin\\Configurable',
+      ),
+    ),
+    'Magento\\Cms\\Model\\ResourceModel\\Page' => 
+    array (
+      'cms_url_rewrite_plugin' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\CmsUrlRewrite\\Plugin\\Cms\\Model\\ResourceModel\\Page',
+      ),
+    ),
+    'Magento\\Integration\\Api\\IntegrationServiceInterface' => 
+    array (
+      'webapiIntegrationService' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Integration\\Model\\Plugin\\Integration',
+      ),
+    ),
+    'Magento\\Backend\\Model\\Auth\\Credential\\StorageInterface' => NULL,
+    'Magento\\User\\Api\\Data\\UserInterface' => NULL,
+    'Magento\\User\\Model\\User' => 
+    array (
+      'revokeTokensFromInactiveAdmins' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Integration\\Plugin\\Model\\AdminUser',
+      ),
+    ),
+    'Magento\\Customer\\Model\\Customer' => 
+    array (
+      'revokeTokensFromInactiveCustomers' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Integration\\Plugin\\Model\\CustomerUser',
+      ),
+    ),
+    'Magento\\CatalogInventory\\Model\\Quote\\Item\\QuantityValidator\\Initializer\\Option' => 
+    array (
+      'configurable_product' => 
+      array (
+        'sortOrder' => 50,
+        'instance' => 'Magento\\ConfigurableProduct\\Model\\Quote\\Item\\QuantityValidator\\Initializer\\Option\\Plugin\\ConfigurableProduct',
+      ),
+    ),
+    'Magento\\Sales\\Model\\Order\\Admin\\Item' => 
+    array (
+      'configurable_product' => 
+      array (
+        'sortOrder' => 50,
+        'instance' => 'Magento\\ConfigurableProduct\\Model\\Order\\Admin\\Item\\Plugin\\Configurable',
+      ),
+    ),
+    'Magento\\Framework\\App\\Helper\\AbstractHelper' => NULL,
+    'Magento\\Catalog\\Helper\\Product\\Configuration\\ConfigurationInterface' => NULL,
+    'Magento\\Catalog\\Helper\\Product\\Configuration' => 
+    array (
+      'grouped_options' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\GroupedProduct\\Helper\\Product\\Configuration\\Plugin\\Grouped',
+      ),
+      'configurable_product' => 
+      array (
+        'sortOrder' => 50,
+        'instance' => 'Magento\\ConfigurableProduct\\Helper\\Product\\Configuration\\Plugin',
+      ),
+    ),
+    'Magento\\Catalog\\Model\\Entity\\Product\\Attribute\\Group\\AttributeMapperInterface' => 
+    array (
+      'configurable_product' => 
+      array (
+        'sortOrder' => 50,
+        'instance' => 'Magento\\ConfigurableProduct\\Model\\Entity\\Product\\Attribute\\Group\\AttributeMapper\\Plugin',
+      ),
+    ),
+    'Magento\\Catalog\\Model\\Product\\Type' => 
+    array (
+      'configurable_output' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\ConfigurableProduct\\Model\\Product\\Type\\Plugin',
+      ),
+      'grouped_output' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\GroupedProduct\\Model\\Product\\Type\\Plugin',
+      ),
+    ),
+    'Magento\\Catalog\\Block\\Product\\View\\AbstractView' => 
+    array (
+      'add_product_object_to_image_data_array' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Swatches\\Model\\Plugin\\ProductImage',
+      ),
+    ),
+    'Magento\\Catalog\\Block\\Product\\View\\Gallery' => 
+    array (
+      'add_product_object_to_image_data_array' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Swatches\\Model\\Plugin\\ProductImage',
+      ),
+    ),
+    'Magento\\ProductVideo\\Block\\Product\\View\\Gallery' => 
+    array (
+      'add_product_object_to_image_data_array' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Swatches\\Model\\Plugin\\ProductImage',
+      ),
+      'product_video_gallery' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\ConfigurableProduct\\Block\\Plugin\\Product\\Media\\Gallery',
+      ),
+    ),
+    'Magento\\ConfigurableProduct\\Model\\Product\\Type\\Configurable' => 
+    array (
+      'add_swatch_attributes_to_configurable' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Swatches\\Model\\Plugin\\Configurable',
+      ),
+      'used_products_cache_graphql' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\ConfigurableProduct\\Model\\Plugin\\Frontend\\UsedProductsCache',
+      ),
+    ),
+    'Magento\\Catalog\\Model\\Product\\Pricing\\Renderer\\SalableResolverInterface' => NULL,
+    'Magento\\Catalog\\Model\\Product\\Pricing\\Renderer\\SalableResolver' => 
+    array (
+      'configurable' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\ConfigurableProduct\\Plugin\\Catalog\\Model\\Product\\Pricing\\Renderer\\SalableResolver',
+      ),
+    ),
+    'Magento\\Rule\\Model\\Condition\\ConditionInterface' => NULL,
+    'Magento\\Rule\\Model\\Condition\\AbstractCondition' => NULL,
+    'Magento\\Rule\\Model\\Condition\\Product\\AbstractProduct' => NULL,
+    'Magento\\SalesRule\\Model\\Rule\\Condition\\Product' => 
+    array (
+      'apply_rule_on_configurable_children' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\ConfigurableProduct\\Plugin\\SalesRule\\Model\\Rule\\Condition\\Product',
+      ),
+    ),
+    'Magento\\Quote\\Model\\Quote\\Address\\Total\\CollectorInterface' => NULL,
+    'Magento\\Quote\\Model\\Quote\\Address\\Total\\ReaderInterface' => NULL,
+    'Magento\\Quote\\Model\\Quote\\Address\\Total\\AbstractTotal' => NULL,
+    'Magento\\Tax\\Model\\Sales\\Total\\Quote\\CommonTaxCollector' => 
+    array (
+      'apply_tax_class_id' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\ConfigurableProduct\\Plugin\\Tax\\Model\\Sales\\Total\\Quote\\CommonTaxCollector',
+      ),
+    ),
+    'Magento\\CatalogInventory\\Model\\ResourceModel\\Stock\\Item' => 
+    array (
+      'updateStockChangedAuto' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\ConfigurableProduct\\Model\\Plugin\\UpdateStockChangedAuto',
+      ),
+      'update_source_item_at_legacy_stock_item_save' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\InventoryCatalog\\Plugin\\CatalogInventory\\UpdateSourceItemAtLegacyStockItemSavePlugin',
+      ),
+      'after_update_stock_item_for_new_configurable_product' => 
+      array (
+        'sortOrder' => 100,
+        'instance' => 'Magento\\InventoryConfigurableProduct\\Plugin\\CatalogInventory\\UpdateLegacyStockItemForNewConfigurableProduct',
+      ),
+      'update_source_stock_for_configurable_product' => 
+      array (
+        'sortOrder' => 200,
+        'instance' => 'Magento\\InventoryConfigurableProduct\\Plugin\\CatalogInventory\\UpdateLegacyStockStatusForConfigurableProduct',
+      ),
+    ),
+    'Magento\\Quote\\Model\\Quote\\Address\\ToOrder' => 
+    array (
+      'add_tax_to_order' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Tax\\Model\\Quote\\ToOrderConverter',
+      ),
+      'set_pickup_location_to_order_during_address_conversion' => 
+      array (
+        'sortOrder' => 20,
+        'instance' => 'Magento\\InventoryInStorePickupQuote\\Plugin\\Quote\\SetPickupLocationToOrder',
+      ),
+    ),
+    'Magento\\Quote\\Model\\Cart\\TotalsConverter' => 
+    array (
+      'add_tax_details' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Tax\\Model\\Quote\\GrandTotalDetailsPlugin',
+      ),
+    ),
+    'Magento\\Sales\\Api\\OrderRepositoryInterface' => 
+    array (
+      'save_order_tax' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Tax\\Model\\Plugin\\OrderSave',
+      ),
+      'save_gift_message' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\GiftMessage\\Model\\Plugin\\OrderSave',
+      ),
+      'get_gift_message' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\GiftMessage\\Model\\Plugin\\OrderGet',
+      ),
+      'get_pickup_location_for_order' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\InventoryInStorePickupSales\\Plugin\\Sales\\Order\\GetPickupLocationForOrderPlugin',
+      ),
+      'save_pickup_location_for_order' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\InventoryInStorePickupSales\\Plugin\\Sales\\Order\\SavePickupLocationForOrderPlugin',
+      ),
+    ),
+    'Magento\\Framework\\View\\Element\\UiComponent\\DataProvider\\DataProvider' => NULL,
+    'Magento\\Catalog\\Ui\\DataProvider\\Product\\Listing\\DataProvider' => 
+    array (
+      'taxSettingsProvider' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Tax\\Plugin\\Ui\\DataProvider\\TaxSettings',
+      ),
+      'weeeSettingsProvider' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Weee\\Plugin\\Ui\\DataProvider\\WeeeSettings',
+      ),
+      'wishlistSettingsDataProvider' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Wishlist\\Plugin\\Ui\\DataProvider\\WishlistSettings',
+      ),
+    ),
     'Magento\\Config\\Model\\Config\\Structure\\Converter' => 
     array (
       'cron_backend_config_structure_converter_plugin' => 
@@ -4931,24 +5251,6 @@
         'instance' => 'Magento\\Analytics\\Plugin\\BearerTokenValidatorPlugin',
       ),
     ),
-    'Magento\\Catalog\\Model\\Product\\CartConfiguration' => 
-    array (
-      'Downloadable' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Downloadable\\Model\\Product\\CartConfiguration\\Plugin\\Downloadable',
-      ),
-      'isProductConfigured' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\GroupedProduct\\Model\\Product\\Cart\\Configuration\\Plugin\\Grouped',
-      ),
-      'configurable_product' => 
-      array (
-        'sortOrder' => 50,
-        'instance' => 'Magento\\ConfigurableProduct\\Model\\Product\\CartConfiguration\\Plugin\\Configurable',
-      ),
-    ),
     'Magento\\Checkout\\Block\\Checkout\\LayoutProcessorInterface' => NULL,
     'Magento\\Checkout\\Block\\Cart\\LayoutProcessor' => 
     array (
@@ -4963,77 +5265,39 @@
         'instance' => 'Magento\\OfflineShipping\\Model\\Plugin\\Checkout\\Block\\Cart\\Shipping',
       ),
     ),
-    'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Price' => 
+    'Magento\\Catalog\\Model\\Product\\Initialization\\Helper\\ProductLinks' => 
     array (
-      'attributeValidation' => 
+      'GroupedProduct' => 
       array (
         'sortOrder' => 0,
-        'instance' => 'Magento\\Catalog\\Plugin\\Model\\Attribute\\Backend\\AttributeValidation',
-      ),
-      'ConfigurableProduct::skipValidation' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\ConfigurableProduct\\Plugin\\Model\\Attribute\\Backend\\AttributeValidation',
-      ),
-      'bundle' => 
-      array (
-        'sortOrder' => 100,
-        'instance' => 'Magento\\Bundle\\Model\\Plugin\\PriceBackend',
-      ),
-      'configurable' => 
-      array (
-        'sortOrder' => 100,
-        'instance' => 'Magento\\ConfigurableProduct\\Model\\Plugin\\PriceBackend',
+        'instance' => 'Magento\\GroupedProduct\\Model\\Product\\Initialization\\Helper\\ProductLinks\\Plugin\\Grouped',
       ),
     ),
-    'Magento\\Sales\\Model\\AbstractModel' => NULL,
-    'Magento\\Sales\\Api\\Data\\OrderItemInterface' => NULL,
-    'Magento\\Sales\\Model\\Order\\Item' => 
+    'Magento\\Catalog\\Model\\ResourceModel\\Product\\Link' => 
     array (
-      'bundle' => 
+      'groupedProductLinkProcessor' => 
       array (
-        'sortOrder' => 100,
-        'instance' => 'Magento\\Bundle\\Model\\Sales\\Order\\Plugin\\Item',
+        'sortOrder' => 0,
+        'instance' => 'Magento\\GroupedProduct\\Model\\ResourceModel\\Product\\Link\\RelationPersister',
       ),
     ),
-    'Magento\\Catalog\\Model\\Product\\Type\\AbstractType' => NULL,
-    'Magento\\Bundle\\Model\\Product\\Type' => 
+    'Magento\\Catalog\\Model\\ResourceModel\\Attribute\\RemoveProductAttributeData' => 
     array (
-      'adapt_is_product_salable' => 
+      'removeWeeAttributesData' => 
       array (
         'sortOrder' => 0,
-        'instance' => 'Magento\\InventoryBundleProduct\\Plugin\\Bundle\\Model\\Product\\Type\\AdaptIsSalablePlugin',
+        'instance' => 'Magento\\Weee\\Plugin\\Catalog\\ResourceModel\\Attribute\\RemoveProductWeeData',
       ),
     ),
-    'Magento\\Quote\\Api\\CartManagementInterface' => 
+    'Magento\\Framework\\View\\Element\\UiComponentInterface' => NULL,
+    'Magento\\Ui\\Component\\AbstractComponent' => NULL,
+    'Magento\\Ui\\Component\\Listing\\Columns' => NULL,
+    'Magento\\Catalog\\Ui\\Component\\Listing\\Columns' => 
     array (
-      'order_cancellation' => 
+      'changeWeeColumnConfig' => 
       array (
         'sortOrder' => 0,
-        'instance' => 'PayPal\\Braintree\\Plugin\\OrderCancellation',
-      ),
-    ),
-    'Magento\\Quote\\Model\\QuoteManagement' => 
-    array (
-      'order_cancellation' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'PayPal\\Braintree\\Plugin\\OrderCancellation',
-      ),
-      'validate_purchase_order_number' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\OfflinePayments\\Plugin\\ValidatePurchaseOrderNumber',
-      ),
-      'update_bundle_quote_item_options' => 
-      array (
-        'sortOrder' => 10,
-        'instance' => 'Magento\\Bundle\\Plugin\\Quote\\UpdateBundleQuoteItemOptions',
-      ),
-      'coupon_uses_increment_plugin' => 
-      array (
-        'sortOrder' => 20,
-        'instance' => 'Magento\\SalesRule\\Plugin\\CouponUsagesIncrement',
+        'instance' => 'Magento\\Weee\\Plugin\\Catalog\\Ui\\Component\\Listing\\Columns',
       ),
     ),
     'Magento\\Catalog\\Model\\Indexer\\Category\\Product\\Action\\Rows' => 
@@ -5091,6 +5355,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Email\\Model\\Mail\\TransportInterfacePlugin',
       ),
+      'customer-sample-data-disable-registration-email-send' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\CustomerSampleData\\Magento\\Framework\\Mail\\Transport\\MailPlugin',
+      ),
     ),
     'Magento\\Framework\\App\\TemplateTypesInterface' => NULL,
     'Magento\\Email\\Model\\AbstractTemplate' => 
@@ -5122,34 +5391,6 @@
         'instance' => 'Magento\\Fedex\\Plugin\\Block\\Tracking\\PopupDeliveryDate',
       ),
     ),
-    'Magento\\Sales\\Api\\OrderRepositoryInterface' => 
-    array (
-      'save_gift_message' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\GiftMessage\\Model\\Plugin\\OrderSave',
-      ),
-      'get_gift_message' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\GiftMessage\\Model\\Plugin\\OrderGet',
-      ),
-      'get_pickup_location_for_order' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\InventoryInStorePickupSales\\Plugin\\Sales\\Order\\GetPickupLocationForOrderPlugin',
-      ),
-      'save_pickup_location_for_order' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\InventoryInStorePickupSales\\Plugin\\Sales\\Order\\SavePickupLocationForOrderPlugin',
-      ),
-      'save_order_tax' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Tax\\Model\\Plugin\\OrderSave',
-      ),
-    ),
     'Magento\\Framework\\App\\PageCache\\Identifier' => 
     array (
       'core-app-area-design-exception-plugin' => 
@@ -5168,50 +5409,6 @@
         'instance' => 'Magento\\PageCache\\Model\\App\\PageCachePlugin',
       ),
     ),
-    'Magento\\Catalog\\Model\\Product\\Type' => 
-    array (
-      'grouped_output' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\GroupedProduct\\Model\\Product\\Type\\Plugin',
-      ),
-      'configurable_output' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\ConfigurableProduct\\Model\\Product\\Type\\Plugin',
-      ),
-    ),
-    'Magento\\Framework\\App\\Helper\\AbstractHelper' => NULL,
-    'Magento\\Catalog\\Helper\\Product\\Configuration\\ConfigurationInterface' => NULL,
-    'Magento\\Catalog\\Helper\\Product\\Configuration' => 
-    array (
-      'grouped_options' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\GroupedProduct\\Helper\\Product\\Configuration\\Plugin\\Grouped',
-      ),
-      'configurable_product' => 
-      array (
-        'sortOrder' => 50,
-        'instance' => 'Magento\\ConfigurableProduct\\Helper\\Product\\Configuration\\Plugin',
-      ),
-    ),
-    'Magento\\Catalog\\Model\\Product\\Initialization\\Helper\\ProductLinks' => 
-    array (
-      'GroupedProduct' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\GroupedProduct\\Model\\Product\\Initialization\\Helper\\ProductLinks\\Plugin\\Grouped',
-      ),
-    ),
-    'Magento\\Catalog\\Model\\ResourceModel\\Product\\Link' => 
-    array (
-      'groupedProductLinkProcessor' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\GroupedProduct\\Model\\ResourceModel\\Product\\Link\\RelationPersister',
-      ),
-    ),
     'Magento\\GroupedProduct\\Model\\Product\\Type\\Grouped' => 
     array (
       'outOfStockFilter' => 
@@ -5225,41 +5422,22 @@
         'instance' => 'Magento\\MsrpGroupedProduct\\Plugin\\Model\\Product\\Type\\Grouped',
       ),
     ),
-    'Magento\\Customer\\Controller\\Ajax\\Login' => 
+    'Magento\\ConfigurableProduct\\Model\\ResourceModel\\Product\\Type\\Configurable\\Product\\Collection' => 
     array (
-      'storeCheck' => 
+      'outOfStockSorting' => 
       array (
         'sortOrder' => 0,
-        'instance' => 'Magento\\Store\\App\\Action\\Plugin\\StoreCheck',
+        'instance' => 'Magento\\InventoryCatalog\\Plugin\\Catalog\\Model\\ResourceModel\\Product\\CollectionPlugin',
       ),
-      'designLoader' => 
+      'catalogRulePriceForConfigurableProduct' => 
       array (
         'sortOrder' => 0,
-        'instance' => 'Magento\\Theme\\Plugin\\LoadDesignPlugin',
+        'instance' => 'Magento\\CatalogRuleConfigurable\\Plugin\\ConfigurableProduct\\Model\\ResourceModel\\AddCatalogRulePrice',
       ),
-      'customerNotification' => 
+      'add_stock_information' => 
       array (
         'sortOrder' => 0,
-        'instance' => 'Magento\\Customer\\Model\\Plugin\\CustomerNotification',
-      ),
-      'captcha_validation' => 
-      array (
-        'sortOrder' => 50,
-        'instance' => 'Magento\\Captcha\\Model\\Customer\\Plugin\\AjaxLogin',
-      ),
-    ),
-    'Magento\\Checkout\\Block\\Cart\\AbstractCart' => NULL,
-    'Magento\\Checkout\\Block\\Cart\\Sidebar' => 
-    array (
-      'addAgreementsToMinicartConfig' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'PayPal\\Braintree\\Plugin\\AddAgreementsToMinicartConfig',
-      ),
-      'login_captcha' => 
-      array (
-        'sortOrder' => 50,
-        'instance' => 'Magento\\Captcha\\Model\\Cart\\ConfigPlugin',
+        'instance' => 'Magento\\ConfigurableProductGraphQl\\Plugin\\AddStockStatusToCollection',
       ),
     ),
     'Magento\\InventoryApi\\Model\\IsProductAssignedToStockInterface' => NULL,
@@ -5540,29 +5718,6 @@
         'instance' => 'Magento\\InventoryCatalog\\Plugin\\CatalogInventory\\UpdateSourceItemAtLegacyQtyCounterPlugin',
       ),
     ),
-    'Magento\\CatalogInventory\\Model\\ResourceModel\\Stock\\Item' => 
-    array (
-      'update_source_item_at_legacy_stock_item_save' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\InventoryCatalog\\Plugin\\CatalogInventory\\UpdateSourceItemAtLegacyStockItemSavePlugin',
-      ),
-      'updateStockChangedAuto' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\ConfigurableProduct\\Model\\Plugin\\UpdateStockChangedAuto',
-      ),
-      'after_update_stock_item_for_new_configurable_product' => 
-      array (
-        'sortOrder' => 100,
-        'instance' => 'Magento\\InventoryConfigurableProduct\\Plugin\\CatalogInventory\\UpdateLegacyStockItemForNewConfigurableProduct',
-      ),
-      'update_source_stock_for_configurable_product' => 
-      array (
-        'sortOrder' => 200,
-        'instance' => 'Magento\\InventoryConfigurableProduct\\Plugin\\CatalogInventory\\UpdateLegacyStockStatusForConfigurableProduct',
-      ),
-    ),
     'Magento\\CatalogInventory\\Model\\ResourceModel\\Stock\\Status' => 
     array (
       'adapt_add_stock_data_to_collection' => 
@@ -5796,103 +5951,6 @@
         'instance' => 'Magento\\InventoryCatalogSearch\\Plugin\\CatalogSearch\\Model\\Indexer\\ChildProductFilterByInventoryStockPlugin',
       ),
     ),
-    'Magento\\CatalogInventory\\Model\\Quote\\Item\\QuantityValidator\\Initializer\\Option' => 
-    array (
-      'configurable_product' => 
-      array (
-        'sortOrder' => 50,
-        'instance' => 'Magento\\ConfigurableProduct\\Model\\Quote\\Item\\QuantityValidator\\Initializer\\Option\\Plugin\\ConfigurableProduct',
-      ),
-    ),
-    'Magento\\Sales\\Model\\Order\\Admin\\Item' => 
-    array (
-      'configurable_product' => 
-      array (
-        'sortOrder' => 50,
-        'instance' => 'Magento\\ConfigurableProduct\\Model\\Order\\Admin\\Item\\Plugin\\Configurable',
-      ),
-    ),
-    'Magento\\Catalog\\Model\\Entity\\Product\\Attribute\\Group\\AttributeMapperInterface' => 
-    array (
-      'configurable_product' => 
-      array (
-        'sortOrder' => 50,
-        'instance' => 'Magento\\ConfigurableProduct\\Model\\Entity\\Product\\Attribute\\Group\\AttributeMapper\\Plugin',
-      ),
-    ),
-    'Magento\\Catalog\\Block\\Product\\View\\AbstractView' => 
-    array (
-      'add_product_object_to_image_data_array' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Swatches\\Model\\Plugin\\ProductImage',
-      ),
-    ),
-    'Magento\\Catalog\\Block\\Product\\View\\Gallery' => 
-    array (
-      'add_product_object_to_image_data_array' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Swatches\\Model\\Plugin\\ProductImage',
-      ),
-    ),
-    'Magento\\ProductVideo\\Block\\Product\\View\\Gallery' => 
-    array (
-      'add_product_object_to_image_data_array' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Swatches\\Model\\Plugin\\ProductImage',
-      ),
-      'product_video_gallery' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\ConfigurableProduct\\Block\\Plugin\\Product\\Media\\Gallery',
-      ),
-    ),
-    'Magento\\ConfigurableProduct\\Model\\Product\\Type\\Configurable' => 
-    array (
-      'add_swatch_attributes_to_configurable' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Swatches\\Model\\Plugin\\Configurable',
-      ),
-      'used_products_cache_graphql' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\ConfigurableProduct\\Model\\Plugin\\Frontend\\UsedProductsCache',
-      ),
-    ),
-    'Magento\\Catalog\\Model\\Product\\Pricing\\Renderer\\SalableResolverInterface' => NULL,
-    'Magento\\Catalog\\Model\\Product\\Pricing\\Renderer\\SalableResolver' => 
-    array (
-      'configurable' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\ConfigurableProduct\\Plugin\\Catalog\\Model\\Product\\Pricing\\Renderer\\SalableResolver',
-      ),
-    ),
-    'Magento\\Rule\\Model\\Condition\\ConditionInterface' => NULL,
-    'Magento\\Rule\\Model\\Condition\\AbstractCondition' => NULL,
-    'Magento\\Rule\\Model\\Condition\\Product\\AbstractProduct' => NULL,
-    'Magento\\SalesRule\\Model\\Rule\\Condition\\Product' => 
-    array (
-      'apply_rule_on_configurable_children' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\ConfigurableProduct\\Plugin\\SalesRule\\Model\\Rule\\Condition\\Product',
-      ),
-    ),
-    'Magento\\Quote\\Model\\Quote\\Address\\Total\\CollectorInterface' => NULL,
-    'Magento\\Quote\\Model\\Quote\\Address\\Total\\ReaderInterface' => NULL,
-    'Magento\\Quote\\Model\\Quote\\Address\\Total\\AbstractTotal' => NULL,
-    'Magento\\Tax\\Model\\Sales\\Total\\Quote\\CommonTaxCollector' => 
-    array (
-      'apply_tax_class_id' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\ConfigurableProduct\\Plugin\\Tax\\Model\\Sales\\Total\\Quote\\CommonTaxCollector',
-      ),
-    ),
     'Magento\\InventorySalesApi\\Model\\GetSkuFromOrderItemInterface' => 
     array (
       'get_configurable_option_sku_from_order' => 
@@ -6025,19 +6083,6 @@
       array (
         'sortOrder' => 20,
         'instance' => 'Magento\\InventoryInStorePickupQuote\\Plugin\\Quote\\DoNotUseBillingAddressForShipping',
-      ),
-    ),
-    'Magento\\Quote\\Model\\Quote\\Address\\ToOrder' => 
-    array (
-      'add_tax_to_order' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Tax\\Model\\Quote\\ToOrderConverter',
-      ),
-      'set_pickup_location_to_order_during_address_conversion' => 
-      array (
-        'sortOrder' => 20,
-        'instance' => 'Magento\\InventoryInStorePickupQuote\\Plugin\\Quote\\SetPickupLocationToOrder',
       ),
     ),
     'Magento\\Quote\\Model\\Quote\\TotalsCollector' => 
@@ -6365,6 +6410,14 @@
         'instance' => 'Magento\\PageBuilder\\Plugin\\Catalog\\Block\\Product\\ProductsListPlugin',
       ),
     ),
+    'Magento\\Framework\\View\\Page\\Config' => 
+    array (
+      'headIncludes' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\ThemeSampleData\\Plugin\\View\\Page\\Config',
+      ),
+    ),
     'Magento\\Sales\\Api\\Data\\OrderPaymentInterface' => 
     array (
       'PaymentVaultExtensionAttributeOperations' => 
@@ -6384,6 +6437,43 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\CheckoutAgreements\\Model\\Checkout\\Plugin\\Validation',
+      ),
+    ),
+    'Magento\\Customer\\Controller\\Ajax\\Login' => 
+    array (
+      'storeCheck' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Store\\App\\Action\\Plugin\\StoreCheck',
+      ),
+      'designLoader' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Theme\\Plugin\\LoadDesignPlugin',
+      ),
+      'customerNotification' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Customer\\Model\\Plugin\\CustomerNotification',
+      ),
+      'captcha_validation' => 
+      array (
+        'sortOrder' => 50,
+        'instance' => 'Magento\\Captcha\\Model\\Customer\\Plugin\\AjaxLogin',
+      ),
+    ),
+    'Magento\\Checkout\\Block\\Cart\\AbstractCart' => NULL,
+    'Magento\\Checkout\\Block\\Cart\\Sidebar' => 
+    array (
+      'addAgreementsToMinicartConfig' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'PayPal\\Braintree\\Plugin\\AddAgreementsToMinicartConfig',
+      ),
+      'login_captcha' => 
+      array (
+        'sortOrder' => 50,
+        'instance' => 'Magento\\Captcha\\Model\\Cart\\ConfigPlugin',
       ),
     ),
     'Magento\\Payment\\Model\\Checks\\SpecificationInterface' => NULL,
@@ -6484,14 +6574,6 @@
         'instance' => 'Magento\\ProductVideo\\Model\\Plugin\\ExternalVideoResourceBackend',
       ),
     ),
-    'Magento\\Checkout\\Api\\GuestPaymentInformationManagementInterface' => 
-    array (
-      'validate-guest-agreements' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CheckoutAgreements\\Model\\Checkout\\Plugin\\GuestValidation',
-      ),
-    ),
     'Magento\\Framework\\GraphQl\\Query\\ResolverInterface' => 
     array (
       'graphql_recaptcha_validation' => 
@@ -6587,24 +6669,6 @@
         'instance' => 'Magento\\RemoteStorage\\Plugin\\Zip',
       ),
     ),
-    'Magento\\ConfigurableProduct\\Model\\ResourceModel\\Product\\Type\\Configurable\\Product\\Collection' => 
-    array (
-      'outOfStockSorting' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\InventoryCatalog\\Plugin\\Catalog\\Model\\ResourceModel\\Product\\CollectionPlugin',
-      ),
-      'catalogRulePriceForConfigurableProduct' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\CatalogRuleConfigurable\\Plugin\\ConfigurableProduct\\Model\\ResourceModel\\AddCatalogRulePrice',
-      ),
-      'add_stock_information' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\ConfigurableProductGraphQl\\Plugin\\AddStockStatusToCollection',
-      ),
-    ),
     'Magento\\Sales\\Model\\Order\\CreditmemoDocumentFactory' => 
     array (
       'sales_inventory_creditmemo_item_set_back_to_stock' => 
@@ -6627,6 +6691,14 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\SalesInventory\\Model\\Plugin\\Order\\Validation\\InvoiceRefundCreationArguments',
+      ),
+    ),
+    'Magento\\Checkout\\Api\\GuestPaymentInformationManagementInterface' => 
+    array (
+      'validate-guest-agreements' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\CheckoutAgreements\\Model\\Checkout\\Plugin\\GuestValidation',
       ),
     ),
     'Magento\\Eav\\Model\\Entity\\Attribute\\AttributeInterface' => NULL,
@@ -6662,33 +6734,6 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Swatches\\Plugin\\Eav\\Model\\Entity\\Attribute\\OptionManagement',
-      ),
-    ),
-    'Magento\\Quote\\Model\\Cart\\TotalsConverter' => 
-    array (
-      'add_tax_details' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Tax\\Model\\Quote\\GrandTotalDetailsPlugin',
-      ),
-    ),
-    'Magento\\Framework\\View\\Element\\UiComponent\\DataProvider\\DataProvider' => NULL,
-    'Magento\\Catalog\\Ui\\DataProvider\\Product\\Listing\\DataProvider' => 
-    array (
-      'taxSettingsProvider' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Tax\\Plugin\\Ui\\DataProvider\\TaxSettings',
-      ),
-      'weeeSettingsProvider' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Weee\\Plugin\\Ui\\DataProvider\\WeeeSettings',
-      ),
-      'wishlistSettingsDataProvider' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Wishlist\\Plugin\\Ui\\DataProvider\\WishlistSettings',
       ),
     ),
     'Magento\\Webapi\\Model\\ServiceMetadata' => 
@@ -6757,25 +6802,6 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\WebapiSecurity\\Model\\Plugin\\AnonymousResourceSecurity',
-      ),
-    ),
-    'Magento\\Catalog\\Model\\ResourceModel\\Attribute\\RemoveProductAttributeData' => 
-    array (
-      'removeWeeAttributesData' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Weee\\Plugin\\Catalog\\ResourceModel\\Attribute\\RemoveProductWeeData',
-      ),
-    ),
-    'Magento\\Framework\\View\\Element\\UiComponentInterface' => NULL,
-    'Magento\\Ui\\Component\\AbstractComponent' => NULL,
-    'Magento\\Ui\\Component\\Listing\\Columns' => NULL,
-    'Magento\\Catalog\\Ui\\Component\\Listing\\Columns' => 
-    array (
-      'changeWeeColumnConfig' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Weee\\Plugin\\Catalog\\Ui\\Component\\Listing\\Columns',
       ),
     ),
     'Magento\\Wishlist\\Controller\\IndexInterface' => NULL,
@@ -6971,6 +6997,22 @@
         'instance' => 'Magento\\GraphQlCache\\Model\\Plugin\\Auth\\TokenRevoker',
       ),
     ),
+    'Magento\\ReCaptchaValidationApi\\Api\\ValidatorInterface' => 
+    array (
+      'graphql_recaptcha_validation_override' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\ReCaptchaWebapiGraphQl\\Plugin\\ValidationOverrider',
+      ),
+    ),
+    'Magento\\CatalogGraphQl\\Model\\Resolver\\Layer\\DataProvider\\Filters' => 
+    array (
+      'add_swatch_data_to_filters' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\SwatchesGraphQl\\Plugin\\Filters\\DataProviderPlugin',
+      ),
+    ),
     'Magento\\QuoteGraphQl\\Model\\Resolver\\SetPaymentMethodOnCart' => 
     array (
       'graphql_recaptcha_validation' => 
@@ -7029,22 +7071,6 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\PaypalGraphQl\\Model\\Plugin\\Payflowlink',
-      ),
-    ),
-    'Magento\\ReCaptchaValidationApi\\Api\\ValidatorInterface' => 
-    array (
-      'graphql_recaptcha_validation_override' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\ReCaptchaWebapiGraphQl\\Plugin\\ValidationOverrider',
-      ),
-    ),
-    'Magento\\CatalogGraphQl\\Model\\Resolver\\Layer\\DataProvider\\Filters' => 
-    array (
-      'add_swatch_data_to_filters' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\SwatchesGraphQl\\Plugin\\Filters\\DataProviderPlugin',
       ),
     ),
   ),
@@ -7605,18 +7631,6 @@
         0 => 'cms_validate_url_plugin',
       ),
     ),
-    'Magento\\ImportExport\\Model\\Import_importSource___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'catalogProductFlatIndexerImport',
-        1 => 'invalidatePriceIndexerOnImport',
-        2 => 'invalidateStockIndexerOnImport',
-        3 => 'invalidateEavIndexerOnImport',
-        4 => 'invalidateProductCategoryIndexerOnImport',
-        5 => 'invalidateCategoryProductIndexerOnImport',
-      ),
-    ),
     'Magento\\Customer\\Model\\ResourceModel\\Visitor_clean___self' => 
     array (
       4 => 
@@ -7849,6 +7863,18 @@
       4 => 
       array (
         0 => 'configurableProductSaveOptions',
+      ),
+    ),
+    'Magento\\ImportExport\\Model\\Import_importSource___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'catalogProductFlatIndexerImport',
+        1 => 'invalidatePriceIndexerOnImport',
+        2 => 'invalidateStockIndexerOnImport',
+        3 => 'invalidateEavIndexerOnImport',
+        4 => 'invalidateProductCategoryIndexerOnImport',
+        5 => 'invalidateCategoryProductIndexerOnImport',
       ),
     ),
     'Magento\\Catalog\\Model\\Product\\Attribute\\Repository_getCustomAttributesMetadata___self' => 
@@ -8086,6 +8112,107 @@
         0 => 'stockedProductFilterByInventoryStockPlugin',
       ),
     ),
+    'Magento\\Quote\\Api\\CartRepositoryInterface_save___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'remove_in_store_pickup_data',
+      ),
+    ),
+    'Magento\\Quote\\Model\\QuoteRepository_save___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'remove_in_store_pickup_data',
+        1 => 'multishipping_quote_repository',
+      ),
+    ),
+    'Magento\\Quote\\Model\\QuoteRepository_get___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'multishipping_quote_repository',
+      ),
+    ),
+    'Magento\\Quote\\Model\\QuoteRepository_getList___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'multishipping_quote_repository',
+      ),
+    ),
+    'Magento\\Quote\\Model\\Quote\\Address_afterSave___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'manage_assignment_of_pickup_location_to_quote_address',
+      ),
+    ),
+    'Magento\\Quote\\Model\\ResourceModel\\Quote\\Address_load___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'load_pickup_location_for_quote_address',
+      ),
+    ),
+    'Magento\\Catalog\\Api\\TierPriceStorageInterface_update___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'update_quote_items_after_tier_prices_update',
+      ),
+    ),
+    'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Price_validate___self' => 
+    array (
+      2 => 'attributeValidation',
+    ),
+    'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Price_validate_attributeValidation' => 
+    array (
+      2 => 'ConfigurableProduct::skipValidation',
+    ),
+    'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Price_validate_ConfigurableProduct::skipValidation' => 
+    array (
+      2 => 'bundle',
+    ),
+    'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Price_validate_bundle' => 
+    array (
+      2 => 'configurable',
+    ),
+    'Magento\\Sales\\Model\\Order\\Item_getQtyToCancel___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'bundle',
+      ),
+    ),
+    'Magento\\Sales\\Model\\Order\\Item_isProcessingAvailable___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'bundle',
+      ),
+    ),
+    'Magento\\Bundle\\Model\\Product\\Type_isSalable___self' => 
+    array (
+      2 => 'adapt_is_product_salable',
+    ),
+    'Magento\\Quote\\Api\\CartManagementInterface_placeOrder___self' => 
+    array (
+      2 => 'order_cancellation',
+    ),
+    'Magento\\Quote\\Model\\QuoteManagement_placeOrder___self' => 
+    array (
+      2 => 'order_cancellation',
+    ),
+    'Magento\\Quote\\Model\\QuoteManagement_submit___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'validate_purchase_order_number',
+        1 => 'update_bundle_quote_item_options',
+      ),
+      2 => 'coupon_uses_increment_plugin',
+    ),
     'Magento\\UrlRewrite\\Model\\StorageInterface_replace___self' => 
     array (
       4 => 
@@ -8155,133 +8282,6 @@
       4 => 
       array (
         0 => 'cleanMergedJsCss',
-      ),
-    ),
-    'Magento\\Quote\\Api\\CartRepositoryInterface_save___self' => 
-    array (
-      1 => 
-      array (
-        0 => 'remove_in_store_pickup_data',
-      ),
-    ),
-    'Magento\\Quote\\Model\\QuoteRepository_save___self' => 
-    array (
-      1 => 
-      array (
-        0 => 'remove_in_store_pickup_data',
-        1 => 'multishipping_quote_repository',
-      ),
-    ),
-    'Magento\\Quote\\Model\\QuoteRepository_get___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'multishipping_quote_repository',
-      ),
-    ),
-    'Magento\\Quote\\Model\\QuoteRepository_getList___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'multishipping_quote_repository',
-      ),
-    ),
-    'Magento\\Quote\\Model\\Quote\\Address_afterSave___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'manage_assignment_of_pickup_location_to_quote_address',
-      ),
-    ),
-    'Magento\\Quote\\Model\\ResourceModel\\Quote\\Address_load___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'load_pickup_location_for_quote_address',
-      ),
-    ),
-    'Magento\\Catalog\\Api\\TierPriceStorageInterface_update___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'update_quote_items_after_tier_prices_update',
-      ),
-    ),
-    'Magento\\MediaGallerySynchronizationApi\\Model\\ImportFilesComposite_execute___self' => 
-    array (
-      1 => 
-      array (
-        0 => 'createMediaGalleryThumbnails',
-      ),
-    ),
-    'Magento\\Cms\\Model\\ResourceModel\\Page_save___self' => 
-    array (
-      1 => 
-      array (
-        0 => 'cms_url_rewrite_plugin',
-      ),
-    ),
-    'Magento\\Cms\\Model\\ResourceModel\\Page_delete___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'cms_url_rewrite_plugin',
-      ),
-    ),
-    'Magento\\Integration\\Api\\IntegrationServiceInterface_create___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'webapiIntegrationService',
-      ),
-    ),
-    'Magento\\Integration\\Api\\IntegrationServiceInterface_update___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'webapiIntegrationService',
-      ),
-    ),
-    'Magento\\Integration\\Api\\IntegrationServiceInterface_get___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'webapiIntegrationService',
-      ),
-    ),
-    'Magento\\Integration\\Api\\IntegrationServiceInterface_delete___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'webapiIntegrationService',
-      ),
-    ),
-    'Magento\\User\\Model\\User_save___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'revokeTokensFromInactiveAdmins',
-      ),
-    ),
-    'Magento\\User\\Model\\User_delete___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'revokeTokensFromInactiveAdmins',
-      ),
-    ),
-    'Magento\\Customer\\Model\\Customer_save___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'revokeTokensFromInactiveCustomers',
-      ),
-    ),
-    'Magento\\Customer\\Model\\Customer_delete___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'revokeTokensFromInactiveCustomers',
       ),
     ),
     'Magento\\Payment\\Block\\Form\\Container_getMethods___self' => 
@@ -8560,6 +8560,262 @@
         0 => 'addressUpdate',
       ),
     ),
+    'Magento\\MediaGallerySynchronizationApi\\Model\\ImportFilesComposite_execute___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'createMediaGalleryThumbnails',
+      ),
+    ),
+    'Magento\\Catalog\\Model\\Product\\CartConfiguration_isProductConfigured___self' => 
+    array (
+      2 => 'Downloadable',
+    ),
+    'Magento\\Catalog\\Model\\Product\\CartConfiguration_isProductConfigured_Downloadable' => 
+    array (
+      2 => 'isProductConfigured',
+    ),
+    'Magento\\Catalog\\Model\\Product\\CartConfiguration_isProductConfigured_isProductConfigured' => 
+    array (
+      2 => 'configurable_product',
+    ),
+    'Magento\\Cms\\Model\\ResourceModel\\Page_save___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'cms_url_rewrite_plugin',
+      ),
+    ),
+    'Magento\\Cms\\Model\\ResourceModel\\Page_delete___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'cms_url_rewrite_plugin',
+      ),
+    ),
+    'Magento\\Integration\\Api\\IntegrationServiceInterface_create___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'webapiIntegrationService',
+      ),
+    ),
+    'Magento\\Integration\\Api\\IntegrationServiceInterface_update___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'webapiIntegrationService',
+      ),
+    ),
+    'Magento\\Integration\\Api\\IntegrationServiceInterface_get___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'webapiIntegrationService',
+      ),
+    ),
+    'Magento\\Integration\\Api\\IntegrationServiceInterface_delete___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'webapiIntegrationService',
+      ),
+    ),
+    'Magento\\User\\Model\\User_save___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'revokeTokensFromInactiveAdmins',
+      ),
+    ),
+    'Magento\\User\\Model\\User_delete___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'revokeTokensFromInactiveAdmins',
+      ),
+    ),
+    'Magento\\Customer\\Model\\Customer_save___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'revokeTokensFromInactiveCustomers',
+      ),
+    ),
+    'Magento\\Customer\\Model\\Customer_delete___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'revokeTokensFromInactiveCustomers',
+      ),
+    ),
+    'Magento\\CatalogInventory\\Model\\Quote\\Item\\QuantityValidator\\Initializer\\Option_getStockItem___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'configurable_product',
+      ),
+    ),
+    'Magento\\Sales\\Model\\Order\\Admin\\Item_getSku___self' => 
+    array (
+      2 => 'configurable_product',
+    ),
+    'Magento\\Sales\\Model\\Order\\Admin\\Item_getName___self' => 
+    array (
+      2 => 'configurable_product',
+    ),
+    'Magento\\Sales\\Model\\Order\\Admin\\Item_getProductId___self' => 
+    array (
+      2 => 'configurable_product',
+    ),
+    'Magento\\Catalog\\Helper\\Product\\Configuration_getOptions___self' => 
+    array (
+      2 => 'grouped_options',
+    ),
+    'Magento\\Catalog\\Helper\\Product\\Configuration_getOptions_grouped_options' => 
+    array (
+      2 => 'configurable_product',
+    ),
+    'Magento\\Catalog\\Model\\Entity\\Product\\Attribute\\Group\\AttributeMapperInterface_map___self' => 
+    array (
+      2 => 'configurable_product',
+    ),
+    'Magento\\Catalog\\Model\\Product\\Type_getOptionArray___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'configurable_output',
+        1 => 'grouped_output',
+      ),
+    ),
+    'Magento\\Catalog\\Block\\Product\\View\\AbstractView_getImage___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'add_product_object_to_image_data_array',
+      ),
+    ),
+    'Magento\\Catalog\\Block\\Product\\View\\Gallery_getImage___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'add_product_object_to_image_data_array',
+      ),
+    ),
+    'Magento\\ProductVideo\\Block\\Product\\View\\Gallery_getImage___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'add_product_object_to_image_data_array',
+      ),
+    ),
+    'Magento\\ProductVideo\\Block\\Product\\View\\Gallery_getOptionsMediaGalleryDataJson___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'product_video_gallery',
+      ),
+    ),
+    'Magento\\ConfigurableProduct\\Model\\Product\\Type\\Configurable_getUsedProductCollection___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'add_swatch_attributes_to_configurable',
+      ),
+    ),
+    'Magento\\ConfigurableProduct\\Model\\Product\\Type\\Configurable_getUsedProducts___self' => 
+    array (
+      2 => 'used_products_cache_graphql',
+    ),
+    'Magento\\Catalog\\Model\\Product\\Pricing\\Renderer\\SalableResolver_isSalable___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'configurable',
+      ),
+    ),
+    'Magento\\SalesRule\\Model\\Rule\\Condition\\Product_validate___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'apply_rule_on_configurable_children',
+      ),
+    ),
+    'Magento\\Tax\\Model\\Sales\\Total\\Quote\\CommonTaxCollector_mapItem___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'apply_tax_class_id',
+      ),
+    ),
+    'Magento\\CatalogInventory\\Model\\ResourceModel\\Stock\\Item_save___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'updateStockChangedAuto',
+      ),
+      2 => 'update_source_item_at_legacy_stock_item_save',
+    ),
+    'Magento\\CatalogInventory\\Model\\ResourceModel\\Stock\\Item_save_update_source_item_at_legacy_stock_item_save' => 
+    array (
+      4 => 
+      array (
+        0 => 'after_update_stock_item_for_new_configurable_product',
+        1 => 'update_source_stock_for_configurable_product',
+      ),
+    ),
+    'Magento\\Quote\\Model\\Quote\\Address\\ToOrder_convert___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'add_tax_to_order',
+        1 => 'set_pickup_location_to_order_during_address_conversion',
+      ),
+      4 => 
+      array (
+        0 => 'add_tax_to_order',
+      ),
+    ),
+    'Magento\\Quote\\Model\\Cart\\TotalsConverter_process___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'add_tax_details',
+      ),
+    ),
+    'Magento\\Sales\\Api\\OrderRepositoryInterface_save___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'save_order_tax',
+        1 => 'save_gift_message',
+        2 => 'save_pickup_location_for_order',
+      ),
+    ),
+    'Magento\\Sales\\Api\\OrderRepositoryInterface_get___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'get_gift_message',
+        1 => 'get_pickup_location_for_order',
+      ),
+    ),
+    'Magento\\Sales\\Api\\OrderRepositoryInterface_getList___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'get_gift_message',
+      ),
+    ),
+    'Magento\\Catalog\\Ui\\DataProvider\\Product\\Listing\\DataProvider_getData___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'taxSettingsProvider',
+        1 => 'weeeSettingsProvider',
+        2 => 'wishlistSettingsDataProvider',
+      ),
+    ),
     'Magento\\Config\\Model\\Config\\Structure\\Converter_convert___self' => 
     array (
       4 => 
@@ -8601,18 +8857,6 @@
         0 => 'allow_bearer_token',
       ),
     ),
-    'Magento\\Catalog\\Model\\Product\\CartConfiguration_isProductConfigured___self' => 
-    array (
-      2 => 'Downloadable',
-    ),
-    'Magento\\Catalog\\Model\\Product\\CartConfiguration_isProductConfigured_Downloadable' => 
-    array (
-      2 => 'isProductConfigured',
-    ),
-    'Magento\\Catalog\\Model\\Product\\CartConfiguration_isProductConfigured_isProductConfigured' => 
-    array (
-      2 => 'configurable_product',
-    ),
     'Magento\\Checkout\\Block\\Cart\\LayoutProcessor_isStateActive___self' => 
     array (
       4 => 
@@ -8628,56 +8872,34 @@
         0 => 'checkout_cart_shipping_dhl',
       ),
     ),
-    'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Price_validate___self' => 
-    array (
-      2 => 'attributeValidation',
-    ),
-    'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Price_validate_attributeValidation' => 
-    array (
-      2 => 'ConfigurableProduct::skipValidation',
-    ),
-    'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Price_validate_ConfigurableProduct::skipValidation' => 
-    array (
-      2 => 'bundle',
-    ),
-    'Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Price_validate_bundle' => 
-    array (
-      2 => 'configurable',
-    ),
-    'Magento\\Sales\\Model\\Order\\Item_getQtyToCancel___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'bundle',
-      ),
-    ),
-    'Magento\\Sales\\Model\\Order\\Item_isProcessingAvailable___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'bundle',
-      ),
-    ),
-    'Magento\\Bundle\\Model\\Product\\Type_isSalable___self' => 
-    array (
-      2 => 'adapt_is_product_salable',
-    ),
-    'Magento\\Quote\\Api\\CartManagementInterface_placeOrder___self' => 
-    array (
-      2 => 'order_cancellation',
-    ),
-    'Magento\\Quote\\Model\\QuoteManagement_placeOrder___self' => 
-    array (
-      2 => 'order_cancellation',
-    ),
-    'Magento\\Quote\\Model\\QuoteManagement_submit___self' => 
+    'Magento\\Catalog\\Model\\Product\\Initialization\\Helper\\ProductLinks_initializeLinks___self' => 
     array (
       1 => 
       array (
-        0 => 'validate_purchase_order_number',
-        1 => 'update_bundle_quote_item_options',
+        0 => 'GroupedProduct',
       ),
-      2 => 'coupon_uses_increment_plugin',
+    ),
+    'Magento\\Catalog\\Model\\ResourceModel\\Product\\Link_saveProductLinks___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'groupedProductLinkProcessor',
+      ),
+    ),
+    'Magento\\Catalog\\Model\\ResourceModel\\Product\\Link_deleteProductLink___self' => 
+    array (
+      2 => 'groupedProductLinkProcessor',
+    ),
+    'Magento\\Catalog\\Model\\ResourceModel\\Attribute\\RemoveProductAttributeData_removeData___self' => 
+    array (
+      2 => 'removeWeeAttributesData',
+    ),
+    'Magento\\Catalog\\Ui\\Component\\Listing\\Columns_prepare___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'changeWeeColumnConfig',
+      ),
     ),
     'Magento\\Catalog\\Model\\Indexer\\Category\\Product\\Action\\Rows_execute___self' => 
     array (
@@ -8736,6 +8958,10 @@
       ),
       2 => 'EmailDisable',
     ),
+    'Magento\\Framework\\Mail\\TransportInterface_sendMessage_EmailDisable' => 
+    array (
+      2 => 'customer-sample-data-disable-registration-email-send',
+    ),
     'Magento\\Email\\Model\\AbstractTemplate_getUrl___self' => 
     array (
       1 => 
@@ -8756,30 +8982,6 @@
       4 => 
       array (
         0 => 'update_delivery_date_value',
-      ),
-    ),
-    'Magento\\Sales\\Api\\OrderRepositoryInterface_save___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'save_gift_message',
-        1 => 'save_pickup_location_for_order',
-        2 => 'save_order_tax',
-      ),
-    ),
-    'Magento\\Sales\\Api\\OrderRepositoryInterface_get___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'get_gift_message',
-        1 => 'get_pickup_location_for_order',
-      ),
-    ),
-    'Magento\\Sales\\Api\\OrderRepositoryInterface_getList___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'get_gift_message',
       ),
     ),
     'Magento\\Framework\\App\\PageCache\\Identifier_getValue___self' => 
@@ -8803,40 +9005,6 @@
         0 => 'fpc-type-plugin',
       ),
     ),
-    'Magento\\Catalog\\Model\\Product\\Type_getOptionArray___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'grouped_output',
-        1 => 'configurable_output',
-      ),
-    ),
-    'Magento\\Catalog\\Helper\\Product\\Configuration_getOptions___self' => 
-    array (
-      2 => 'grouped_options',
-    ),
-    'Magento\\Catalog\\Helper\\Product\\Configuration_getOptions_grouped_options' => 
-    array (
-      2 => 'configurable_product',
-    ),
-    'Magento\\Catalog\\Model\\Product\\Initialization\\Helper\\ProductLinks_initializeLinks___self' => 
-    array (
-      1 => 
-      array (
-        0 => 'GroupedProduct',
-      ),
-    ),
-    'Magento\\Catalog\\Model\\ResourceModel\\Product\\Link_saveProductLinks___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'groupedProductLinkProcessor',
-      ),
-    ),
-    'Magento\\Catalog\\Model\\ResourceModel\\Product\\Link_deleteProductLink___self' => 
-    array (
-      2 => 'groupedProductLinkProcessor',
-    ),
     'Magento\\GroupedProduct\\Model\\Product\\Type\\Grouped_prepareForCartAdvanced___self' => 
     array (
       4 => 
@@ -8851,22 +9019,26 @@
         0 => 'grouped_product_minimum_advertised_price',
       ),
     ),
-    'Magento\\Customer\\Controller\\Ajax\\Login_execute___self' => 
+    'Magento\\ConfigurableProduct\\Model\\ResourceModel\\Product\\Type\\Configurable\\Product\\Collection_setOrder___self' => 
     array (
       1 => 
       array (
-        0 => 'storeCheck',
-        1 => 'designLoader',
-        2 => 'customerNotification',
+        0 => 'outOfStockSorting',
       ),
-      2 => 'captcha_validation',
     ),
-    'Magento\\Checkout\\Block\\Cart\\Sidebar_getConfig___self' => 
+    'Magento\\ConfigurableProduct\\Model\\ResourceModel\\Product\\Type\\Configurable\\Product\\Collection_addOrder___self' => 
     array (
-      4 => 
+      1 => 
       array (
-        0 => 'addAgreementsToMinicartConfig',
-        1 => 'login_captcha',
+        0 => 'outOfStockSorting',
+      ),
+    ),
+    'Magento\\ConfigurableProduct\\Model\\ResourceModel\\Product\\Type\\Configurable\\Product\\Collection_load___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'catalogRulePriceForConfigurableProduct',
+        1 => 'add_stock_information',
       ),
     ),
     'Magento\\Inventory\\Model\\ResourceModel\\IsProductAssignedToStock_execute___self' => 
@@ -9073,22 +9245,6 @@
     array (
       2 => 'update_source_item_at_legacy_qty_counter',
     ),
-    'Magento\\CatalogInventory\\Model\\ResourceModel\\Stock\\Item_save___self' => 
-    array (
-      2 => 'update_source_item_at_legacy_stock_item_save',
-    ),
-    'Magento\\CatalogInventory\\Model\\ResourceModel\\Stock\\Item_save_update_source_item_at_legacy_stock_item_save' => 
-    array (
-      1 => 
-      array (
-        0 => 'updateStockChangedAuto',
-      ),
-      4 => 
-      array (
-        0 => 'after_update_stock_item_for_new_configurable_product',
-        1 => 'update_source_stock_for_configurable_product',
-      ),
-    ),
     'Magento\\CatalogInventory\\Model\\ResourceModel\\Stock\\Status_addStockDataToCollection___self' => 
     array (
       2 => 'adapt_add_stock_data_to_collection',
@@ -9244,89 +9400,6 @@
         0 => 'stock_filters_by_child_products',
       ),
     ),
-    'Magento\\CatalogInventory\\Model\\Quote\\Item\\QuantityValidator\\Initializer\\Option_getStockItem___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'configurable_product',
-      ),
-    ),
-    'Magento\\Sales\\Model\\Order\\Admin\\Item_getSku___self' => 
-    array (
-      2 => 'configurable_product',
-    ),
-    'Magento\\Sales\\Model\\Order\\Admin\\Item_getName___self' => 
-    array (
-      2 => 'configurable_product',
-    ),
-    'Magento\\Sales\\Model\\Order\\Admin\\Item_getProductId___self' => 
-    array (
-      2 => 'configurable_product',
-    ),
-    'Magento\\Catalog\\Model\\Entity\\Product\\Attribute\\Group\\AttributeMapperInterface_map___self' => 
-    array (
-      2 => 'configurable_product',
-    ),
-    'Magento\\Catalog\\Block\\Product\\View\\AbstractView_getImage___self' => 
-    array (
-      1 => 
-      array (
-        0 => 'add_product_object_to_image_data_array',
-      ),
-    ),
-    'Magento\\Catalog\\Block\\Product\\View\\Gallery_getImage___self' => 
-    array (
-      1 => 
-      array (
-        0 => 'add_product_object_to_image_data_array',
-      ),
-    ),
-    'Magento\\ProductVideo\\Block\\Product\\View\\Gallery_getImage___self' => 
-    array (
-      1 => 
-      array (
-        0 => 'add_product_object_to_image_data_array',
-      ),
-    ),
-    'Magento\\ProductVideo\\Block\\Product\\View\\Gallery_getOptionsMediaGalleryDataJson___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'product_video_gallery',
-      ),
-    ),
-    'Magento\\ConfigurableProduct\\Model\\Product\\Type\\Configurable_getUsedProductCollection___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'add_swatch_attributes_to_configurable',
-      ),
-    ),
-    'Magento\\ConfigurableProduct\\Model\\Product\\Type\\Configurable_getUsedProducts___self' => 
-    array (
-      2 => 'used_products_cache_graphql',
-    ),
-    'Magento\\Catalog\\Model\\Product\\Pricing\\Renderer\\SalableResolver_isSalable___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'configurable',
-      ),
-    ),
-    'Magento\\SalesRule\\Model\\Rule\\Condition\\Product_validate___self' => 
-    array (
-      1 => 
-      array (
-        0 => 'apply_rule_on_configurable_children',
-      ),
-    ),
-    'Magento\\Tax\\Model\\Sales\\Total\\Quote\\CommonTaxCollector_mapItem___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'apply_tax_class_id',
-      ),
-    ),
     'Magento\\InventorySalesApi\\Model\\GetSkuFromOrderItemInterface_execute___self' => 
     array (
       2 => 'get_configurable_option_sku_from_order',
@@ -9424,18 +9497,6 @@
       1 => 
       array (
         0 => 'do_not_use_billing_address_for_shipping_for_in_store_pickup_quote',
-      ),
-    ),
-    'Magento\\Quote\\Model\\Quote\\Address\\ToOrder_convert___self' => 
-    array (
-      1 => 
-      array (
-        0 => 'add_tax_to_order',
-        1 => 'set_pickup_location_to_order_during_address_conversion',
-      ),
-      4 => 
-      array (
-        0 => 'add_tax_to_order',
       ),
     ),
     'Magento\\Quote\\Model\\Quote\\TotalsCollector_collect___self' => 
@@ -9722,6 +9783,13 @@
         0 => 'pagebuilder_product_list',
       ),
     ),
+    'Magento\\Framework\\View\\Page\\Config_getIncludes___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'headIncludes',
+      ),
+    ),
     'Magento\\Sales\\Api\\Data\\OrderPaymentInterface_getExtensionAttributes___self' => 
     array (
       4 => 
@@ -9741,6 +9809,24 @@
       1 => 
       array (
         0 => 'validate-agreements',
+      ),
+    ),
+    'Magento\\Customer\\Controller\\Ajax\\Login_execute___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'storeCheck',
+        1 => 'designLoader',
+        2 => 'customerNotification',
+      ),
+      2 => 'captcha_validation',
+    ),
+    'Magento\\Checkout\\Block\\Cart\\Sidebar_getConfig___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'addAgreementsToMinicartConfig',
+        1 => 'login_captcha',
       ),
     ),
     'Magento\\Payment\\Model\\Checks\\Composite_isApplicable___self' => 
@@ -9827,13 +9913,6 @@
       4 => 
       array (
         0 => 'external_video_media_resource_backend',
-      ),
-    ),
-    'Magento\\Checkout\\Api\\GuestPaymentInformationManagementInterface_savePaymentInformationAndPlaceOrder___self' => 
-    array (
-      1 => 
-      array (
-        0 => 'validate-guest-agreements',
       ),
     ),
     'Magento\\Framework\\GraphQl\\Query\\ResolverInterface_resolve___self' => 
@@ -9924,28 +10003,6 @@
     array (
       2 => 'remoteZipArchive',
     ),
-    'Magento\\ConfigurableProduct\\Model\\ResourceModel\\Product\\Type\\Configurable\\Product\\Collection_setOrder___self' => 
-    array (
-      1 => 
-      array (
-        0 => 'outOfStockSorting',
-      ),
-    ),
-    'Magento\\ConfigurableProduct\\Model\\ResourceModel\\Product\\Type\\Configurable\\Product\\Collection_addOrder___self' => 
-    array (
-      1 => 
-      array (
-        0 => 'outOfStockSorting',
-      ),
-    ),
-    'Magento\\ConfigurableProduct\\Model\\ResourceModel\\Product\\Type\\Configurable\\Product\\Collection_load___self' => 
-    array (
-      1 => 
-      array (
-        0 => 'catalogRulePriceForConfigurableProduct',
-        1 => 'add_stock_information',
-      ),
-    ),
     'Magento\\Sales\\Model\\Order\\CreditmemoDocumentFactory_createFromOrder___self' => 
     array (
       4 => 
@@ -9972,6 +10029,13 @@
       4 => 
       array (
         0 => 'refundInvoiceValidationAfter',
+      ),
+    ),
+    'Magento\\Checkout\\Api\\GuestPaymentInformationManagementInterface_savePaymentInformationAndPlaceOrder___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'validate-guest-agreements',
       ),
     ),
     'Magento\\Catalog\\Model\\ResourceModel\\Eav\\Attribute_beforeSave___self' => 
@@ -10011,22 +10075,6 @@
       1 => 
       array (
         0 => 'swatches_product_attribute_optionmanagement_plugin',
-      ),
-    ),
-    'Magento\\Quote\\Model\\Cart\\TotalsConverter_process___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'add_tax_details',
-      ),
-    ),
-    'Magento\\Catalog\\Ui\\DataProvider\\Product\\Listing\\DataProvider_getData___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'taxSettingsProvider',
-        1 => 'weeeSettingsProvider',
-        2 => 'wishlistSettingsDataProvider',
       ),
     ),
     'Magento\\Webapi\\Model\\ServiceMetadata_getServicesConfig___self' => 
@@ -10094,17 +10142,6 @@
       4 => 
       array (
         0 => 'webapiResourceSecurity',
-      ),
-    ),
-    'Magento\\Catalog\\Model\\ResourceModel\\Attribute\\RemoveProductAttributeData_removeData___self' => 
-    array (
-      2 => 'removeWeeAttributesData',
-    ),
-    'Magento\\Catalog\\Ui\\Component\\Listing\\Columns_prepare___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'changeWeeColumnConfig',
       ),
     ),
     'Magento\\Wishlist\\Controller\\AbstractIndex_execute___self' => 
@@ -10250,6 +10287,14 @@
         0 => 'set-guest-after-revoke',
       ),
     ),
+    'Magento\\ReCaptchaValidationApi\\Api\\ValidatorInterface_isValid___self' => 
+    array (
+      2 => 'graphql_recaptcha_validation_override',
+    ),
+    'Magento\\CatalogGraphQl\\Model\\Resolver\\Layer\\DataProvider\\Filters_getData___self' => 
+    array (
+      2 => 'add_swatch_data_to_filters',
+    ),
     'Magento\\QuoteGraphQl\\Model\\Resolver\\SetPaymentMethodOnCart_resolve___self' => 
     array (
       1 => 
@@ -10282,14 +10327,6 @@
       array (
         0 => 'payflow_link_update_redirect_urls',
       ),
-    ),
-    'Magento\\ReCaptchaValidationApi\\Api\\ValidatorInterface_isValid___self' => 
-    array (
-      2 => 'graphql_recaptcha_validation_override',
-    ),
-    'Magento\\CatalogGraphQl\\Model\\Resolver\\Layer\\DataProvider\\Filters_getData___self' => 
-    array (
-      2 => 'add_swatch_data_to_filters',
     ),
   ),
 );

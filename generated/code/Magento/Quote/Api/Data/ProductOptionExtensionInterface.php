@@ -18,17 +18,6 @@ interface ProductOptionExtensionInterface extends \Magento\Framework\Api\Extensi
     public function setCustomOptions($customOptions);
 
     /**
-     * @return \Magento\Downloadable\Api\Data\DownloadableOptionInterface|null
-     */
-    public function getDownloadableOption();
-
-    /**
-     * @param \Magento\Downloadable\Api\Data\DownloadableOptionInterface $downloadableOption
-     * @return $this
-     */
-    public function setDownloadableOption(\Magento\Downloadable\Api\Data\DownloadableOptionInterface $downloadableOption);
-
-    /**
      * @return \Magento\Bundle\Api\Data\BundleOptionInterface[]|null
      */
     public function getBundleOptions();
@@ -40,15 +29,15 @@ interface ProductOptionExtensionInterface extends \Magento\Framework\Api\Extensi
     public function setBundleOptions($bundleOptions);
 
     /**
-     * @return \Magento\GroupedProduct\Api\Data\GroupedOptionsInterface[]|null
+     * @return \Magento\Downloadable\Api\Data\DownloadableOptionInterface|null
      */
-    public function getGroupedOptions();
+    public function getDownloadableOption();
 
     /**
-     * @param \Magento\GroupedProduct\Api\Data\GroupedOptionsInterface[] $groupedOptions
+     * @param \Magento\Downloadable\Api\Data\DownloadableOptionInterface $downloadableOption
      * @return $this
      */
-    public function setGroupedOptions($groupedOptions);
+    public function setDownloadableOption(\Magento\Downloadable\Api\Data\DownloadableOptionInterface $downloadableOption);
 
     /**
      * @return \Magento\ConfigurableProduct\Api\Data\ConfigurableItemOptionValueInterface[]|null
@@ -60,4 +49,15 @@ interface ProductOptionExtensionInterface extends \Magento\Framework\Api\Extensi
      * @return $this
      */
     public function setConfigurableItemOptions($configurableItemOptions);
+
+    /**
+     * @return \Magento\GroupedProduct\Api\Data\GroupedOptionsInterface[]|null
+     */
+    public function getGroupedOptions();
+
+    /**
+     * @param \Magento\GroupedProduct\Api\Data\GroupedOptionsInterface[] $groupedOptions
+     * @return $this
+     */
+    public function setGroupedOptions($groupedOptions);
 }
