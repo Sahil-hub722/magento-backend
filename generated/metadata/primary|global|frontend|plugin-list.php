@@ -1192,30 +1192,6 @@
         'instance' => 'Magento\\CmsUrlRewrite\\Plugin\\Cms\\Model\\ResourceModel\\Page',
       ),
     ),
-    'Magento\\Integration\\Api\\IntegrationServiceInterface' => 
-    array (
-      'webapiIntegrationService' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Integration\\Model\\Plugin\\Integration',
-      ),
-    ),
-    'Magento\\User\\Model\\User' => 
-    array (
-      'revokeTokensFromInactiveAdmins' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Integration\\Plugin\\Model\\AdminUser',
-      ),
-    ),
-    'Magento\\Customer\\Model\\Customer' => 
-    array (
-      'revokeTokensFromInactiveCustomers' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Integration\\Plugin\\Model\\CustomerUser',
-      ),
-    ),
     'Magento\\CatalogInventory\\Model\\Quote\\Item\\QuantityValidator\\Initializer\\Option' => 
     array (
       'configurable_product' => 
@@ -1440,20 +1416,28 @@
         'instance' => 'Magento\\PageCache\\Model\\Layout\\MergePlugin',
       ),
     ),
-    'Magento\\Config\\Model\\Config\\Backend\\Baseurl' => 
+    'Magento\\Integration\\Api\\IntegrationServiceInterface' => 
     array (
-      'updateAnalyticsSubscription' => 
+      'webapiIntegrationService' => 
       array (
         'sortOrder' => 0,
-        'instance' => 'Magento\\Analytics\\Model\\Plugin\\BaseUrlConfigPlugin',
+        'instance' => 'Magento\\Integration\\Model\\Plugin\\Integration',
       ),
     ),
-    'Magento\\Integration\\Model\\Validator\\BearerTokenValidator' => 
+    'Magento\\User\\Model\\User' => 
     array (
-      'allow_bearer_token' => 
+      'revokeTokensFromInactiveAdmins' => 
       array (
         'sortOrder' => 0,
-        'instance' => 'Magento\\Analytics\\Plugin\\BearerTokenValidatorPlugin',
+        'instance' => 'Magento\\Integration\\Plugin\\Model\\AdminUser',
+      ),
+    ),
+    'Magento\\Customer\\Model\\Customer' => 
+    array (
+      'revokeTokensFromInactiveCustomers' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Integration\\Plugin\\Model\\CustomerUser',
       ),
     ),
     'Magento\\Framework\\App\\FrontControllerInterface' => 
@@ -1646,6 +1630,22 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\CatalogRuleConfigurable\\Plugin\\ConfigurableProduct\\Model\\ResourceModel\\AddCatalogRulePrice',
+      ),
+    ),
+    'Magento\\Config\\Model\\Config\\Backend\\Baseurl' => 
+    array (
+      'updateAnalyticsSubscription' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Analytics\\Model\\Plugin\\BaseUrlConfigPlugin',
+      ),
+    ),
+    'Magento\\Integration\\Model\\Validator\\BearerTokenValidator' => 
+    array (
+      'allow_bearer_token' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Analytics\\Plugin\\BearerTokenValidatorPlugin',
       ),
     ),
     'Magento\\Inventory\\Model\\ResourceModel\\IsProductAssignedToStock' => 
@@ -2936,6 +2936,23 @@
       array (
         'sortOrder' => 0,
         'instance' => 'PayPal\\Braintree\\Plugin\\OrderCancellation',
+      ),
+    ),
+    'Training\\PluginExample\\Model\\ProductKey' => 
+    array (
+      'product_key_plugin' => 
+      array (
+        'sortOrder' => 0,
+        'disabled' => true,
+        'instance' => 'Training\\PluginExample\\Plugin\\ProductKeyPlugin',
+      ),
+    ),
+    'Magento\\Framework\\Data\\Structure' => 
+    array (
+      'render_customer_new' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Training\\LayoutRemoveExample\\Plugin\\RenderCustomerNew',
       ),
     ),
     'Magento\\Framework\\App\\Action\\AbstractAction' => 
@@ -6262,32 +6279,6 @@
         'instance' => 'Magento\\CmsUrlRewrite\\Plugin\\Cms\\Model\\ResourceModel\\Page',
       ),
     ),
-    'Magento\\Integration\\Api\\IntegrationServiceInterface' => 
-    array (
-      'webapiIntegrationService' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Integration\\Model\\Plugin\\Integration',
-      ),
-    ),
-    'Magento\\Backend\\Model\\Auth\\Credential\\StorageInterface' => NULL,
-    'Magento\\User\\Api\\Data\\UserInterface' => NULL,
-    'Magento\\User\\Model\\User' => 
-    array (
-      'revokeTokensFromInactiveAdmins' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Integration\\Plugin\\Model\\AdminUser',
-      ),
-    ),
-    'Magento\\Customer\\Model\\Customer' => 
-    array (
-      'revokeTokensFromInactiveCustomers' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Integration\\Plugin\\Model\\CustomerUser',
-      ),
-    ),
     'Magento\\CatalogInventory\\Model\\Quote\\Item\\QuantityValidator\\Initializer\\Option' => 
     array (
       'configurable_product' => 
@@ -6549,35 +6540,30 @@
         'instance' => 'Magento\\Widget\\Model\\ResourceModel\\Layout\\Plugin',
       ),
     ),
-    'Magento\\Config\\Model\\Config\\Backend\\Baseurl' => 
+    'Magento\\Integration\\Api\\IntegrationServiceInterface' => 
     array (
-      'admin_system_config_media_gallery_renditions' => 
+      'webapiIntegrationService' => 
       array (
         'sortOrder' => 0,
-        'instance' => 'Magento\\MediaGalleryRenditions\\Plugin\\UpdateRenditionsOnConfigChange',
-      ),
-      'admin_system_config_adobe_stock_save_plugin' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\MediaGallerySynchronization\\Plugin\\MediaGallerySyncTrigger',
-      ),
-      'webapiResourceSecurityCacheInvalidate' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\WebapiSecurity\\Model\\Plugin\\CacheInvalidator',
-      ),
-      'updateAnalyticsSubscription' => 
-      array (
-        'sortOrder' => 0,
-        'instance' => 'Magento\\Analytics\\Model\\Plugin\\BaseUrlConfigPlugin',
+        'instance' => 'Magento\\Integration\\Model\\Plugin\\Integration',
       ),
     ),
-    'Magento\\Integration\\Model\\Validator\\BearerTokenValidator' => 
+    'Magento\\Backend\\Model\\Auth\\Credential\\StorageInterface' => NULL,
+    'Magento\\User\\Api\\Data\\UserInterface' => NULL,
+    'Magento\\User\\Model\\User' => 
     array (
-      'allow_bearer_token' => 
+      'revokeTokensFromInactiveAdmins' => 
       array (
         'sortOrder' => 0,
-        'instance' => 'Magento\\Analytics\\Plugin\\BearerTokenValidatorPlugin',
+        'instance' => 'Magento\\Integration\\Plugin\\Model\\AdminUser',
+      ),
+    ),
+    'Magento\\Customer\\Model\\Customer' => 
+    array (
+      'revokeTokensFromInactiveCustomers' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Integration\\Plugin\\Model\\CustomerUser',
       ),
     ),
     'Magento\\Checkout\\Block\\Checkout\\LayoutProcessorInterface' => NULL,
@@ -6777,6 +6763,37 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\CatalogRuleConfigurable\\Plugin\\ConfigurableProduct\\Model\\ResourceModel\\AddCatalogRulePrice',
+      ),
+    ),
+    'Magento\\Config\\Model\\Config\\Backend\\Baseurl' => 
+    array (
+      'admin_system_config_media_gallery_renditions' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\MediaGalleryRenditions\\Plugin\\UpdateRenditionsOnConfigChange',
+      ),
+      'admin_system_config_adobe_stock_save_plugin' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\MediaGallerySynchronization\\Plugin\\MediaGallerySyncTrigger',
+      ),
+      'webapiResourceSecurityCacheInvalidate' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\WebapiSecurity\\Model\\Plugin\\CacheInvalidator',
+      ),
+      'updateAnalyticsSubscription' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Analytics\\Model\\Plugin\\BaseUrlConfigPlugin',
+      ),
+    ),
+    'Magento\\Integration\\Model\\Validator\\BearerTokenValidator' => 
+    array (
+      'allow_bearer_token' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\Analytics\\Plugin\\BearerTokenValidatorPlugin',
       ),
     ),
     'Magento\\InventoryApi\\Model\\IsProductAssignedToStockInterface' => NULL,
@@ -8279,6 +8296,23 @@
       array (
         'sortOrder' => 0,
         'instance' => 'PayPal\\Braintree\\Plugin\\AddFlagForVirtualProducts',
+      ),
+    ),
+    'Training\\PluginExample\\Model\\ProductKey' => 
+    array (
+      'product_key_plugin' => 
+      array (
+        'sortOrder' => 0,
+        'disabled' => true,
+        'instance' => 'Training\\PluginExample\\Plugin\\ProductKeyPlugin',
+      ),
+    ),
+    'Magento\\Framework\\Data\\Structure' => 
+    array (
+      'render_customer_new' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Training\\LayoutRemoveExample\\Plugin\\RenderCustomerNew',
       ),
     ),
     'Magento\\Framework\\Controller\\ResultInterface' => 
@@ -11134,62 +11168,6 @@
         0 => 'cms_url_rewrite_plugin',
       ),
     ),
-    'Magento\\Integration\\Api\\IntegrationServiceInterface_create___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'webapiIntegrationService',
-      ),
-    ),
-    'Magento\\Integration\\Api\\IntegrationServiceInterface_update___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'webapiIntegrationService',
-      ),
-    ),
-    'Magento\\Integration\\Api\\IntegrationServiceInterface_get___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'webapiIntegrationService',
-      ),
-    ),
-    'Magento\\Integration\\Api\\IntegrationServiceInterface_delete___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'webapiIntegrationService',
-      ),
-    ),
-    'Magento\\User\\Model\\User_save___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'revokeTokensFromInactiveAdmins',
-      ),
-    ),
-    'Magento\\User\\Model\\User_delete___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'revokeTokensFromInactiveAdmins',
-      ),
-    ),
-    'Magento\\Customer\\Model\\Customer_save___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'revokeTokensFromInactiveCustomers',
-      ),
-    ),
-    'Magento\\Customer\\Model\\Customer_delete___self' => 
-    array (
-      4 => 
-      array (
-        0 => 'revokeTokensFromInactiveCustomers',
-      ),
-    ),
     'Magento\\CatalogInventory\\Model\\Quote\\Item\\QuantityValidator\\Initializer\\Option_getStockItem___self' => 
     array (
       4 => 
@@ -11400,27 +11378,60 @@
     array (
       2 => 'widget-layout-update-plugin',
     ),
-    'Magento\\Config\\Model\\Config\\Backend\\Baseurl_save___self' => 
+    'Magento\\Integration\\Api\\IntegrationServiceInterface_create___self' => 
     array (
       4 => 
       array (
-        0 => 'admin_system_config_media_gallery_renditions',
-        1 => 'admin_system_config_adobe_stock_save_plugin',
+        0 => 'webapiIntegrationService',
       ),
     ),
-    'Magento\\Config\\Model\\Config\\Backend\\Baseurl_afterSave___self' => 
+    'Magento\\Integration\\Api\\IntegrationServiceInterface_update___self' => 
     array (
       4 => 
       array (
-        0 => 'webapiResourceSecurityCacheInvalidate',
-        1 => 'updateAnalyticsSubscription',
+        0 => 'webapiIntegrationService',
       ),
     ),
-    'Magento\\Integration\\Model\\Validator\\BearerTokenValidator_isIntegrationAllowedAsBearerToken___self' => 
+    'Magento\\Integration\\Api\\IntegrationServiceInterface_get___self' => 
     array (
       4 => 
       array (
-        0 => 'allow_bearer_token',
+        0 => 'webapiIntegrationService',
+      ),
+    ),
+    'Magento\\Integration\\Api\\IntegrationServiceInterface_delete___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'webapiIntegrationService',
+      ),
+    ),
+    'Magento\\User\\Model\\User_save___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'revokeTokensFromInactiveAdmins',
+      ),
+    ),
+    'Magento\\User\\Model\\User_delete___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'revokeTokensFromInactiveAdmins',
+      ),
+    ),
+    'Magento\\Customer\\Model\\Customer_save___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'revokeTokensFromInactiveCustomers',
+      ),
+    ),
+    'Magento\\Customer\\Model\\Customer_delete___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'revokeTokensFromInactiveCustomers',
       ),
     ),
     'Magento\\Checkout\\Block\\Cart\\LayoutProcessor_isStateActive___self' => 
@@ -11619,6 +11630,29 @@
       array (
         0 => 'add_stock_information',
         1 => 'catalogRulePriceForConfigurableProduct',
+      ),
+    ),
+    'Magento\\Config\\Model\\Config\\Backend\\Baseurl_save___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'admin_system_config_media_gallery_renditions',
+        1 => 'admin_system_config_adobe_stock_save_plugin',
+      ),
+    ),
+    'Magento\\Config\\Model\\Config\\Backend\\Baseurl_afterSave___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'webapiResourceSecurityCacheInvalidate',
+        1 => 'updateAnalyticsSubscription',
+      ),
+    ),
+    'Magento\\Integration\\Model\\Validator\\BearerTokenValidator_isIntegrationAllowedAsBearerToken___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'allow_bearer_token',
       ),
     ),
     'Magento\\Inventory\\Model\\ResourceModel\\IsProductAssignedToStock_execute___self' => 
@@ -12822,6 +12856,13 @@
       4 => 
       array (
         0 => 'braintreeAddFlagForVirtualProducts',
+      ),
+    ),
+    'Magento\\Framework\\Data\\Structure_getAttribute___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'render_customer_new',
       ),
     ),
     'Magento\\Framework\\Controller\\ResultInterface_renderResult___self' => 

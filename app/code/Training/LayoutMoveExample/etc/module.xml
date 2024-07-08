@@ -4,5 +4,6 @@
         <sequence>
             <module name="Magento_Customer"/>
         </sequence>
+        <!-- making a module for changing the layout -->
     </module>
 </config>

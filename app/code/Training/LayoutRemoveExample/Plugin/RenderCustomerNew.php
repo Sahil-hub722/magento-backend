@@ -25,6 +25,7 @@ class RenderCustomerNew
 
     public function afterGetAttribute(\Magento\Framework\Data\Structure $subject, $result, $elementId, $attribute)
     {
+        // This is the main thing to change customer new block
         if ($this->request->getFullActionName() === 'customer_account_login') {
             if ($elementId === 'customer.new' && $attribute === 'display') {
                 return true;
