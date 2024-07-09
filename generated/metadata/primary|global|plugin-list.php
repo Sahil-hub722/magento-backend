@@ -2887,15 +2887,6 @@
         'instance' => 'PayPal\\Braintree\\Plugin\\OrderCancellation',
       ),
     ),
-    'Training\\PluginExample\\Model\\ProductKey' => 
-    array (
-      'product_key_plugin' => 
-      array (
-        'sortOrder' => 0,
-        'disabled' => true,
-        'instance' => 'Training\\PluginExample\\Plugin\\ProductKeyPlugin',
-      ),
-    ),
     'Magento\\Framework\\Data\\Structure' => 
     array (
       'render_customer_new' => 
@@ -4117,11 +4108,6 @@
     'BraintreeLpmAuthorizeRequest' => NULL,
     'BraintreeLpmAuthorizationHandler' => NULL,
     'BraintreeLpmSaleRequest' => NULL,
-    'Training\\DependencyExample\\Model\\VirtualType\\DefaultName' => NULL,
-    'UpperCaseName' => NULL,
-    'Training\\WarehouseManagement\\Api\\WarehouseRepositoryInterface' => NULL,
-    'Training\\WarehouseManagement\\Model\\WarehouseRepository' => NULL,
-    'WarehouseRepositoryExtended' => NULL,
     'Magento\\Framework\\DB\\Adapter\\AdapterInterface' => 
     array (
       'execute_commit_callbacks' => 
@@ -7813,15 +7799,6 @@
       array (
         'sortOrder' => 0,
         'instance' => 'PayPal\\Braintree\\Plugin\\AddFlagForVirtualProducts',
-      ),
-    ),
-    'Training\\PluginExample\\Model\\ProductKey' => 
-    array (
-      'product_key_plugin' => 
-      array (
-        'sortOrder' => 0,
-        'disabled' => true,
-        'instance' => 'Training\\PluginExample\\Plugin\\ProductKeyPlugin',
       ),
     ),
     'Magento\\Framework\\Data\\Structure' => 

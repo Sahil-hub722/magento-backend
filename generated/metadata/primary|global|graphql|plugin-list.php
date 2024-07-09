@@ -2943,15 +2943,6 @@
         'instance' => 'PayPal\\Braintree\\Plugin\\OrderCancellation',
       ),
     ),
-    'Training\\PluginExample\\Model\\ProductKey' => 
-    array (
-      'product_key_plugin' => 
-      array (
-        'sortOrder' => 0,
-        'disabled' => true,
-        'instance' => 'Training\\PluginExample\\Plugin\\ProductKeyPlugin',
-      ),
-    ),
     'Magento\\Framework\\Data\\Structure' => 
     array (
       'render_customer_new' => 
@@ -7029,15 +7020,6 @@
       array (
         'sortOrder' => 0,
         'instance' => 'PayPal\\Braintree\\Plugin\\AddFlagForVirtualProducts',
-      ),
-    ),
-    'Training\\PluginExample\\Model\\ProductKey' => 
-    array (
-      'product_key_plugin' => 
-      array (
-        'sortOrder' => 0,
-        'disabled' => true,
-        'instance' => 'Training\\PluginExample\\Plugin\\ProductKeyPlugin',
       ),
     ),
     'Magento\\Framework\\Data\\Structure' => 
