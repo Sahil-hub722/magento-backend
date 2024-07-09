@@ -26,6 +26,15 @@ class Interceptor extends \Magento\Catalog\Block\Product\View implements \Magent
     /**
      * {@inheritdoc}
      */
+    public function getJsonConfig()
+    {
+        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'getJsonConfig');
+        return $pluginInfo ? $this->___callPlugins('getJsonConfig', func_get_args(), $pluginInfo) : parent::getJsonConfig();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function getQuantityValidators()
     {
         $pluginInfo = $this->pluginList->getNext($this->subjectType, 'getQuantityValidators');

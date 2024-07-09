@@ -1341,6 +1341,14 @@
         'instance' => 'Magento\\Cron\\Model\\Backend\\Config\\Structure\\Converter',
       ),
     ),
+    'Magento\\Framework\\View\\TemplateEngine\\Php' => 
+    array (
+      'php_template_engine_plugin' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Hyva\\Theme\\Plugin\\TemplateEngine\\PhpPlugin',
+      ),
+    ),
     'Magento\\Framework\\App\\RouterInterface' => 
     array (
       'csp_aware_plugin' => 
@@ -1407,6 +1415,14 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\PageCache\\Model\\App\\FrontController\\VarnishPlugin',
+      ),
+    ),
+    'Magento\\Deploy\\Package\\Package' => 
+    array (
+      'deploy_package_exclude_tailwind_from_deployment' => 
+      array (
+        'sortOrder' => 99999,
+        'instance' => 'Hyva\\Theme\\Plugin\\Deploy\\Package\\ExcludeTailwindPlugin',
       ),
     ),
     'Magento\\Checkout\\Block\\Cart\\LayoutProcessor' => 
@@ -2623,6 +2639,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Persistent\\Model\\Plugin\\CustomerData',
       ),
+      'customerdata.customer' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Hyva\\GraphqlTokens\\CustomerData\\CustomerPlugin',
+      ),
     ),
     'Magento\\Catalog\\Model\\Product\\Gallery\\CreateHandler' => 
     array (
@@ -2850,6 +2871,54 @@
         'instance' => 'Magento\\Wishlist\\Controller\\Index\\Plugin',
       ),
     ),
+    'Magento\\Framework\\View\\Design\\Fallback\\Rule\\ModularSwitch' => 
+    array (
+      'hyva_email' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Hyva\\Email\\Plugin\\FallbackRulePlugin',
+      ),
+    ),
+    'Magento\\Deploy\\Package\\PackageFile' => 
+    array (
+      'hyva_email' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Hyva\\Email\\Plugin\\PackageFilePlugin',
+      ),
+    ),
+    'Magento\\Checkout\\CustomerData\\Cart' => 
+    array (
+      'customerdata.cart' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Hyva\\GraphqlTokens\\CustomerData\\CartPlugin',
+      ),
+    ),
+    'Magento\\Framework\\View\\File\\FileList\\Collator' => 
+    array (
+      'file_collator_plugin' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Hyva\\Theme\\Plugin\\File\\FileList\\CollatorPlugin',
+      ),
+    ),
+    'Magento\\Tax\\Pricing\\Render\\Adjustment' => 
+    array (
+      'fix_core_type_php81_error' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Hyva\\Theme\\Plugin\\Tax\\PriceAdjustmentRendererFixPlugin',
+      ),
+    ),
+    'Magento\\Framework\\App\\DeploymentConfig\\Writer' => 
+    array (
+      'hyva_theme' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Hyva\\Theme\\Plugin\\HyvaModulesConfig\\UpdateOnModuleStatusChange',
+      ),
+    ),
     'Magento\\Framework\\View\\Asset\\Minification' => 
     array (
       'braintreeExcludeFromMinification' => 
@@ -2920,7 +2989,7 @@
       'ClearCustomerSessionAfterRequest' => 
       array (
         'sortOrder' => 1,
-        'disabled' => false,
+        'disabled' => true,
         'instance' => 'Magento\\CustomerGraphQl\\Plugin\\ClearCustomerSessionAfterRequest',
       ),
     ),
@@ -3064,6 +3133,30 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\PaypalGraphQl\\Model\\Plugin\\Payflowlink',
+      ),
+    ),
+    'Magento\\QuoteGraphQl\\Model\\Resolver\\CartItems' => 
+    array (
+      'cart-items-resolver' => 
+      array (
+        'sortOrder' => -1,
+        'instance' => 'Hyva\\Theme\\Plugin\\QuoteGraphQL\\CartItemsResolverPlugin',
+      ),
+    ),
+    'Magento\\QuoteGraphQl\\Model\\CartItem\\DataProvider\\CustomizableOption' => 
+    array (
+      'graphQlQueries' => 
+      array (
+        'sortOrder' => -1,
+        'instance' => 'Hyva\\Theme\\Plugin\\QuoteGraphQL\\CustomizableOptionPlugin',
+      ),
+    ),
+    'Magento\\QuoteGraphQl\\Model\\Resolver\\CartPrices' => 
+    array (
+      'fix-tax-labels' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Hyva\\Theme\\Plugin\\QuoteGraphQL\\FixCartPricesTaxRateLabelsPlugin',
       ),
     ),
   ),
@@ -5194,6 +5287,15 @@
         'instance' => 'Magento\\Cron\\Model\\Backend\\Config\\Structure\\Converter',
       ),
     ),
+    'Magento\\Framework\\View\\TemplateEngineInterface' => NULL,
+    'Magento\\Framework\\View\\TemplateEngine\\Php' => 
+    array (
+      'php_template_engine_plugin' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Hyva\\Theme\\Plugin\\TemplateEngine\\PhpPlugin',
+      ),
+    ),
     'Magento\\Framework\\App\\RouterInterface' => 
     array (
       'csp_aware_plugin' => 
@@ -5235,6 +5337,14 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\Integration\\Plugin\\Model\\CustomerUser',
+      ),
+    ),
+    'Magento\\Deploy\\Package\\Package' => 
+    array (
+      'deploy_package_exclude_tailwind_from_deployment' => 
+      array (
+        'sortOrder' => 99999,
+        'instance' => 'Hyva\\Theme\\Plugin\\Deploy\\Package\\ExcludeTailwindPlugin',
       ),
     ),
     'Magento\\Checkout\\Block\\Checkout\\LayoutProcessorInterface' => NULL,
@@ -6565,6 +6675,11 @@
         'sortOrder' => 0,
         'instance' => 'Magento\\Persistent\\Model\\Plugin\\CustomerData',
       ),
+      'customerdata.customer' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Hyva\\GraphqlTokens\\CustomerData\\CustomerPlugin',
+      ),
     ),
     'Magento\\Framework\\EntityManager\\Operation\\ExtensionInterface' => NULL,
     'Magento\\Catalog\\Model\\Product\\Gallery\\CreateHandler' => 
@@ -6846,6 +6961,59 @@
         'instance' => 'Magento\\Wishlist\\Controller\\Index\\Plugin',
       ),
     ),
+    'Magento\\Framework\\View\\Design\\Fallback\\Rule\\RuleInterface' => NULL,
+    'Magento\\Framework\\View\\Design\\Fallback\\Rule\\ModularSwitch' => 
+    array (
+      'hyva_email' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Hyva\\Email\\Plugin\\FallbackRulePlugin',
+      ),
+    ),
+    'Magento\\Framework\\View\\Asset' => NULL,
+    'Magento\\Deploy\\Package\\PackageFile' => 
+    array (
+      'hyva_email' => 
+      array (
+        'sortOrder' => 10,
+        'instance' => 'Hyva\\Email\\Plugin\\PackageFilePlugin',
+      ),
+    ),
+    'Magento\\Checkout\\CustomerData\\Cart' => 
+    array (
+      'customerdata.cart' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Hyva\\GraphqlTokens\\CustomerData\\CartPlugin',
+      ),
+    ),
+    'Magento\\Framework\\View\\File\\FileList\\CollateInterface' => NULL,
+    'Magento\\Framework\\View\\File\\FileList\\Collator' => 
+    array (
+      'file_collator_plugin' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Hyva\\Theme\\Plugin\\File\\FileList\\CollatorPlugin',
+      ),
+    ),
+    'Magento\\Framework\\Pricing\\Render\\AdjustmentRenderInterface' => NULL,
+    'Magento\\Framework\\Pricing\\Render\\AbstractAdjustment' => NULL,
+    'Magento\\Tax\\Pricing\\Render\\Adjustment' => 
+    array (
+      'fix_core_type_php81_error' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Hyva\\Theme\\Plugin\\Tax\\PriceAdjustmentRendererFixPlugin',
+      ),
+    ),
+    'Magento\\Framework\\App\\DeploymentConfig\\Writer' => 
+    array (
+      'hyva_theme' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Hyva\\Theme\\Plugin\\HyvaModulesConfig\\UpdateOnModuleStatusChange',
+      ),
+    ),
     'Magento\\Framework\\View\\Asset\\Minification' => 
     array (
       'braintreeExcludeFromMinification' => 
@@ -6932,7 +7100,7 @@
       'ClearCustomerSessionAfterRequest' => 
       array (
         'sortOrder' => 1,
-        'disabled' => false,
+        'disabled' => true,
         'instance' => 'Magento\\CustomerGraphQl\\Plugin\\ClearCustomerSessionAfterRequest',
       ),
       'configHash' => 
@@ -7105,6 +7273,60 @@
       array (
         'sortOrder' => 0,
         'instance' => 'Magento\\PaypalGraphQl\\Model\\Plugin\\Payflowlink',
+      ),
+    ),
+    'Magento\\QuoteGraphQl\\Model\\Resolver\\CartItems' => 
+    array (
+      'cart-items-resolver' => 
+      array (
+        'sortOrder' => -1,
+        'instance' => 'Hyva\\Theme\\Plugin\\QuoteGraphQL\\CartItemsResolverPlugin',
+      ),
+      'graphql_recaptcha_validation' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\ReCaptchaWebapiGraphQl\\Plugin\\GraphQlValidator',
+      ),
+      'cache' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\GraphQlCache\\Model\\Plugin\\Query\\Resolver',
+      ),
+      'reset-totals' => 
+      array (
+        'sortOrder' => 1,
+        'instance' => 'Magento\\QuoteGraphQl\\Plugin\\ResetStoredTotalsBeforeTopResolver',
+      ),
+    ),
+    'Magento\\QuoteGraphQl\\Model\\CartItem\\DataProvider\\CustomizableOption' => 
+    array (
+      'graphQlQueries' => 
+      array (
+        'sortOrder' => -1,
+        'instance' => 'Hyva\\Theme\\Plugin\\QuoteGraphQL\\CustomizableOptionPlugin',
+      ),
+    ),
+    'Magento\\QuoteGraphQl\\Model\\Resolver\\CartPrices' => 
+    array (
+      'graphql_recaptcha_validation' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\ReCaptchaWebapiGraphQl\\Plugin\\GraphQlValidator',
+      ),
+      'cache' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Magento\\GraphQlCache\\Model\\Plugin\\Query\\Resolver',
+      ),
+      'fix-tax-labels' => 
+      array (
+        'sortOrder' => 0,
+        'instance' => 'Hyva\\Theme\\Plugin\\QuoteGraphQL\\FixCartPricesTaxRateLabelsPlugin',
+      ),
+      'reset-totals' => 
+      array (
+        'sortOrder' => 1,
+        'instance' => 'Magento\\QuoteGraphQl\\Plugin\\ResetStoredTotalsBeforeTopResolver',
       ),
     ),
   ),
@@ -8801,6 +9023,13 @@
         0 => 'cron_backend_config_structure_converter_plugin',
       ),
     ),
+    'Magento\\Framework\\View\\TemplateEngine\\Php_render___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'php_template_engine_plugin',
+      ),
+    ),
     'Magento\\Framework\\App\\RouterInterface_match___self' => 
     array (
       4 => 
@@ -8866,6 +9095,20 @@
       4 => 
       array (
         0 => 'revokeTokensFromInactiveCustomers',
+      ),
+    ),
+    'Magento\\Deploy\\Package\\Package_getFiles___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'deploy_package_exclude_tailwind_from_deployment',
+      ),
+    ),
+    'Magento\\Deploy\\Package\\Package_getMap___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'deploy_package_exclude_tailwind_from_deployment',
       ),
     ),
     'Magento\\Checkout\\Block\\Cart\\LayoutProcessor_isStateActive___self' => 
@@ -9917,6 +10160,13 @@
     array (
       2 => 'section_data',
     ),
+    'Magento\\Customer\\CustomerData\\Customer_getSectionData_section_data' => 
+    array (
+      4 => 
+      array (
+        0 => 'customerdata.customer',
+      ),
+    ),
     'Magento\\Catalog\\Model\\Product\\Gallery\\CreateHandler_execute___self' => 
     array (
       1 => 
@@ -10194,6 +10444,49 @@
         0 => 'authentication',
       ),
     ),
+    'Magento\\Framework\\View\\Design\\Fallback\\Rule\\ModularSwitch_getPatternDirs___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'hyva_email',
+      ),
+    ),
+    'Magento\\Deploy\\Package\\PackageFile_setPackage___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'hyva_email',
+      ),
+    ),
+    'Magento\\Checkout\\CustomerData\\Cart_getSectionData___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'customerdata.cart',
+      ),
+    ),
+    'Magento\\Framework\\View\\File\\FileList\\Collator_collate___self' => 
+    array (
+      2 => 'file_collator_plugin',
+    ),
+    'Magento\\Tax\\Pricing\\Render\\Adjustment_render___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'fix_core_type_php81_error',
+      ),
+    ),
+    'Magento\\Tax\\Pricing\\Render\\Adjustment_getDataPriceType___self' => 
+    array (
+      2 => 'fix_core_type_php81_error',
+    ),
+    'Magento\\Framework\\App\\DeploymentConfig\\Writer_saveConfig___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'hyva_theme',
+      ),
+    ),
     'Magento\\Framework\\View\\Asset\\Minification_getExcludes___self' => 
     array (
       4 => 
@@ -10254,7 +10547,6 @@
       4 => 
       array (
         0 => 'front-controller-varnish-cache',
-        1 => 'ClearCustomerSessionAfterRequest',
       ),
       1 => 
       array (
@@ -10367,6 +10659,39 @@
       4 => 
       array (
         0 => 'payflow_link_update_redirect_urls',
+      ),
+    ),
+    'Magento\\QuoteGraphQl\\Model\\Resolver\\CartItems_resolve___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'cart-items-resolver',
+        1 => 'cache',
+      ),
+      1 => 
+      array (
+        0 => 'graphql_recaptcha_validation',
+        1 => 'reset-totals',
+      ),
+    ),
+    'Magento\\QuoteGraphQl\\Model\\CartItem\\DataProvider\\CustomizableOption_getData___self' => 
+    array (
+      4 => 
+      array (
+        0 => 'graphQlQueries',
+      ),
+    ),
+    'Magento\\QuoteGraphQl\\Model\\Resolver\\CartPrices_resolve___self' => 
+    array (
+      1 => 
+      array (
+        0 => 'graphql_recaptcha_validation',
+        1 => 'reset-totals',
+      ),
+      4 => 
+      array (
+        0 => 'cache',
+        1 => 'fix-tax-labels',
       ),
     ),
   ),
