@@ -4108,6 +4108,11 @@
     'BraintreeLpmAuthorizeRequest' => NULL,
     'BraintreeLpmAuthorizationHandler' => NULL,
     'BraintreeLpmSaleRequest' => NULL,
+    'Training\\DependencyExample\\Model\\VirtualType\\DefaultName' => NULL,
+    'UpperCaseName' => NULL,
+    'Training\\WarehouseManagement\\Api\\WarehouseRepositoryInterface' => NULL,
+    'Training\\WarehouseManagement\\Model\\WarehouseRepository' => NULL,
+    'WarehouseRepositoryExtended' => NULL,
     'Magento\\Framework\\DB\\Adapter\\AdapterInterface' => 
     array (
       'execute_commit_callbacks' => 

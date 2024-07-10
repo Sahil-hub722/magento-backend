@@ -354,6 +354,7 @@ return [
         'PayPal_BraintreeGraphQl' => 1,
         'Temando_ShippingRemover' => 1,
         'Training_AddRemoveBlockByObserver' => 1,
+        'Training_ConsoleExample' => 1,
         'Training_Contact' => 1,
         'Training_DependencyExample' => 1,
         'Training_Example' => 1,
@@ -365,10 +366,13 @@ return [
         'Training_LayoutMoveExample' => 1,
         'Training_LayoutRemoveExample' => 1,
         'Training_PoolPattern' => 1,
+        'Training_PreferenceExtended' => 1,
+        'Training_Preferences' => 1,
         'Training_ProxyExample' => 1,
         'Training_ReplaceConstructorArguments' => 1,
         'Training_ViewModelExample' => 1,
         'Training_VirtualTypeExample' => 1,
+        'Training_WarehouseManagement' => 1,
         'Training_VirtualTypeExample2' => 1,
         'Training_WidgetExample' => 1
     ]
