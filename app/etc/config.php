@@ -368,6 +368,8 @@ return [
         'Training_ProxyExample' => 1,
         'Training_ReplaceConstructorArguments' => 1,
         'Training_ViewModelExample' => 1,
+        'Training_VirtualTypeExample' => 1,
+        'Training_VirtualTypeExample2' => 1,
         'Training_WidgetExample' => 1
     ]
 ];
