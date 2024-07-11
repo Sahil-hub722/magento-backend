@@ -368,7 +368,6 @@ return [
         'Training_LayoutMoveExample' => 1,
         'Training_LayoutRemoveExample' => 1,
         'Training_LoggerExample' => 1,
-        'Training_ObserverExample' => 1,
         'Training_DisablePluginExample' => 1,
         'Training_PoolPattern' => 1,
         'Training_PreferenceExtended' => 1,
